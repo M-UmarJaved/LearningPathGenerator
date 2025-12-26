@@ -1,0 +1,147 @@
+<app-navbar></app-navbar>
+
+<div class="landing-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">✨ AI-Powered Learning Platform</div>
+        <h1 class="hero-title">
+          Master New Skills with
+          <span class="gradient-text">Personalized Learning Paths</span>
+        </h1>
+        <p class="hero-description">
+          Experience intelligent skill assessments, customized course recommendations, 
+          and adaptive learning paths tailored just for you. Start your journey today.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-primary" [routerLink]="['/register']" [queryParams]="{ fromLanding: 1 }">Get Started Free</button>
+          <button class="btn-outline" routerLink="/features">Explore Features</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">10K+</div>
+            <div class="stat-label">Active Learners</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Courses</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">95%</div>
+            <div class="stat-label">Success Rate</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-card card-1">
+          <div class="card-icon">📊</div>
+          <div class="card-content">
+            <div class="card-title">Skill Assessment</div>
+            <div class="card-desc">AI-powered evaluation</div>
+          </div>
+        </div>
+        <div class="floating-card card-2">
+          <div class="card-icon">🗺️</div>
+          <div class="card-content">
+            <div class="card-title">Learning Path</div>
+            <div class="card-desc">Customized roadmap</div>
+          </div>
+        </div>
+        <div class="floating-card card-3">
+          <div class="card-icon">🏆</div>
+          <div class="card-content">
+            <div class="card-title">Track Progress</div>
+            <div class="card-desc">Real-time analytics</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Preview Section -->
+  <section class="features-preview">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title">Why Choose LearnPath?</h2>
+        <p class="section-description">
+          Intelligent features designed to accelerate your learning journey
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3 class="feature-title">Personalized Assessments</h3>
+          <p class="feature-desc">
+            Take intelligent skill assessments that adapt to your knowledge level
+            and identify areas for improvement.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🧠</div>
+          <h3 class="feature-title">AI-Powered Paths</h3>
+          <p class="feature-desc">
+            Get customized learning paths built using advanced graph algorithms
+            and dependency analysis.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3 class="feature-title">Progress Tracking</h3>
+          <p class="feature-desc">
+            Monitor your learning journey with detailed analytics and
+            visualize your skill development.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🎓</div>
+          <h3 class="feature-title">Quality Content</h3>
+          <p class="feature-desc">
+            Access curated courses and video content from industry experts
+            across various domains.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3 class="feature-title">Adaptive Learning</h3>
+          <p class="feature-desc">
+            Experience content that adapts to your pace and learning style
+            for optimal knowledge retention.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔄</div>
+          <h3 class="feature-title">Continuous Improvement</h3>
+          <p class="feature-desc">
+            Retake assessments, update your learning paths, and evolve your
+            skills continuously.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <div class="cta-content">
+        <h2 class="cta-title">Ready to Start Your Learning Journey?</h2>
+        <p class="cta-description">
+          Join thousands of learners who are mastering new skills every day
+        </p>
+        <button class="btn-primary-large" [routerLink]="['/register']" [queryParams]="{ fromLanding: 1 }">
+          Get Started Now
+          <span class="btn-arrow">→</span>
+        </button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<app-footer></app-footer>

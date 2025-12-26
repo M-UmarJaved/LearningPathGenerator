@@ -1,0 +1,53 @@
+@PersonalizedLearningPath_HostAddress = http://localhost:5196
+
+### List skills (pick a skillId)
+GET {{PersonalizedLearningPath_HostAddress}}/api/skills
+Accept: application/json
+
+### Create a course (replace SkillId)
+POST {{PersonalizedLearningPath_HostAddress}}/api/courses
+Content-Type: application/json
+
+{
+	"skillId": 1,
+	"courseTitle": "Data Structures: Beginner Track",
+	"courseLevel": "Beginner",
+	"youtubeVideoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+	"totalVideos": 3,
+	"sequenceOrder": 1
+}
+
+### Add video 1 (replace courseId)
+POST {{PersonalizedLearningPath_HostAddress}}/api/courses/1/videos
+Content-Type: application/json
+
+{
+	"videoIndex": 1,
+	"videoTitle": "Introduction",
+	"youtubeVideoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+}
+
+### Add video 2
+POST {{PersonalizedLearningPath_HostAddress}}/api/courses/1/videos
+Content-Type: application/json
+
+{
+	"videoIndex": 2,
+	"videoTitle": "Arrays and Big-O",
+	"youtubeVideoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+}
+
+### Add video 3
+POST {{PersonalizedLearningPath_HostAddress}}/api/courses/1/videos
+Content-Type: application/json
+
+{
+	"videoIndex": 3,
+	"videoTitle": "Linked Lists",
+	"youtubeVideoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+}
+
+GET {{PersonalizedLearningPath_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

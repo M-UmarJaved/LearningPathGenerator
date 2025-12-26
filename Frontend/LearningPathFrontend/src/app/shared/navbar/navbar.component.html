@@ -1,0 +1,33 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <!-- Logo -->
+    <a routerLink="/home" class="logo">
+      <span class="logo-icon">🎓</span>
+      <span class="logo-text">LearnPath</span>
+    </a>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-btn" (click)="toggleMobileMenu()" aria-label="Toggle menu">
+      <span class="hamburger" [class.active]="isMobileMenuOpen"></span>
+    </button>
+
+    <!-- Navigation Links -->
+    <div class="nav-links" [class.mobile-open]="isMobileMenuOpen">
+      <a routerLink="/home" routerLinkActive="active" (click)="closeMobileMenu()">Home</a>
+      <a routerLink="/features" routerLinkActive="active" (click)="closeMobileMenu()">Features</a>
+      <a routerLink="/about" routerLinkActive="active" (click)="closeMobileMenu()">About</a>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="nav-actions" [class.mobile-open]="isMobileMenuOpen">
+      <button
+        class="btn-secondary"
+        [routerLink]="['/register']"
+        [queryParams]="{ fromLanding: 1 }"
+        (click)="closeMobileMenu()"
+      >
+        Sign Up
+      </button>
+    </div>
+  </div>
+</nav>

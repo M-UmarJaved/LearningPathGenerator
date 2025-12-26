@@ -1,0 +1,517 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\controllers\\conceptdependencycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\controllers\\conceptdependencycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\services\\conceptdependencygraph\\conceptdependencyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\services\\conceptdependencygraph\\conceptdependencyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\services\\conceptdependencygraph\\iconceptdependencyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\services\\conceptdependencygraph\\iconceptdependencyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\datastructures\\graph\\directedgraph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\datastructures\\graph\\directedgraph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\controllers\\skillassessmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\controllers\\skillassessmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\datastructures\\graph\\graphnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\datastructures\\graph\\graphnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\migrations\\20251216131433_addquestiontable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\migrations\\20251216131433_addquestiontable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\services\\skillassessment\\skillassessmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\services\\skillassessment\\skillassessmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\models\\userskillassessment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\models\\userskillassessment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\dtos\\skillassessment\\answerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\dtos\\skillassessment\\answerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\dtos\\skillassessment\\questiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\dtos\\skillassessment\\questiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\datastructures\\trees\\binaryquestiontree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\datastructures\\trees\\binaryquestiontree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\services\\authservices\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\services\\authservices\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\services\\skillassessment\\iskillassessmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\services\\skillassessment\\iskillassessmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\dtos\\skillassessment\\finalassessmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\dtos\\skillassessment\\finalassessmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\dtos\\skillassessment\\skillresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\dtos\\skillassessment\\skillresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\dtos\\skillassessment\\startassessmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\dtos\\skillassessment\\startassessmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\datastructures\\trees\\questionnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\datastructures\\trees\\questionnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\models\\skill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\models\\skill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\services\\authservices\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\services\\authservices\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\datastructures\\hashtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\datastructures\\hashtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\datastructures\\linkedlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\datastructures\\linkedlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\personalizedlearningpath.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\personalizedlearningpath.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|d:\\university\\cs 2024-2028\\3rd semester\\dsa lab\\finalproject\\backend\\personalizedlearningpath\\personalizedlearningpath\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24AA897-C7A6-462A-B731-BE8333DE9244}|PersonalizedLearningPath\\PersonalizedLearningPath.csproj|solutionrelative:personalizedlearningpath\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 287,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ConceptDependencyService.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Services\\ConceptDependencyGraph\\ConceptDependencyService.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\Services\\ConceptDependencyGraph\\ConceptDependencyService.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Services\\ConceptDependencyGraph\\ConceptDependencyService.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\Services\\ConceptDependencyGraph\\ConceptDependencyService.cs",
+              "ViewState": "AgIAAL8AAAAAAAAAAAAswAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T01:58:59.351Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ConceptDependencyController.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Controllers\\ConceptDependencyController.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\Controllers\\ConceptDependencyController.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Controllers\\ConceptDependencyController.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\Controllers\\ConceptDependencyController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T01:57:13.146Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Program.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\Program.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Program.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAwB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T10:44:25.745Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\appsettings.json",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\appsettings.json",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\appsettings.json",
+              "RelativeToolTip": "PersonalizedLearningPath\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-13T10:56:29.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IConceptDependencyService.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Services\\ConceptDependencyGraph\\IConceptDependencyService.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\Services\\ConceptDependencyGraph\\IConceptDependencyService.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Services\\ConceptDependencyGraph\\IConceptDependencyService.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\Services\\ConceptDependencyGraph\\IConceptDependencyService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T01:58:42.291Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DirectedGraph.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DataStructures\\Graph\\DirectedGraph.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\DataStructures\\Graph\\DirectedGraph.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DataStructures\\Graph\\DirectedGraph.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\DataStructures\\Graph\\DirectedGraph.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAswAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T01:59:53.393Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GraphNode.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DataStructures\\Graph\\GraphNode.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\DataStructures\\Graph\\GraphNode.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DataStructures\\Graph\\GraphNode.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\DataStructures\\Graph\\GraphNode.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T01:59:33.284Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SkillAssessmentController.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Controllers\\SkillAssessmentController.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\Controllers\\SkillAssessmentController.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Controllers\\SkillAssessmentController.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\Controllers\\SkillAssessmentController.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAkwB0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T15:13:53.248Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20251216131433_AddQuestionTable.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Migrations\\20251216131433_AddQuestionTable.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\Migrations\\20251216131433_AddQuestionTable.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Migrations\\20251216131433_AddQuestionTable.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\Migrations\\20251216131433_AddQuestionTable.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAQwGMAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T04:21:45.823Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Question.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Models\\Question.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\Models\\Question.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Models\\Question.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\Models\\Question.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAQwBAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T12:15:45.992Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserSkillAssessment.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Models\\UserSkillAssessment.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\Models\\UserSkillAssessment.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Models\\UserSkillAssessment.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\Models\\UserSkillAssessment.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T12:16:42.227Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AnswerDto.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DTOs\\SkillAssessment\\AnswerDto.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\DTOs\\SkillAssessment\\AnswerDto.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DTOs\\SkillAssessment\\AnswerDto.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\DTOs\\SkillAssessment\\AnswerDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T15:05:15.022Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SkillAssessmentService.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Services\\SkillAssessment\\SkillAssessmentService.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\Services\\SkillAssessment\\SkillAssessmentService.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Services\\SkillAssessment\\SkillAssessmentService.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\Services\\SkillAssessment\\SkillAssessmentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T15:06:57.609Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "QuestionDto.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DTOs\\SkillAssessment\\QuestionDto.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\DTOs\\SkillAssessment\\QuestionDto.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DTOs\\SkillAssessment\\QuestionDto.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\DTOs\\SkillAssessment\\QuestionDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T15:05:02.815Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "BinaryQuestionTree.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DataStructures\\Trees\\BinaryQuestionTree.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\DataStructures\\Trees\\BinaryQuestionTree.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DataStructures\\Trees\\BinaryQuestionTree.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\DataStructures\\Trees\\BinaryQuestionTree.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T15:08:16.399Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\Data\\AppDbContext.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAlwE0AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T10:28:35.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Services\\AuthServices\\AuthService.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\Services\\AuthServices\\AuthService.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Services\\AuthServices\\AuthService.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\Services\\AuthServices\\AuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T10:24:25.248Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ISkillAssessmentService.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Services\\SkillAssessment\\ISkillAssessmentService.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\Services\\SkillAssessment\\ISkillAssessmentService.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Services\\SkillAssessment\\ISkillAssessmentService.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\Services\\SkillAssessment\\ISkillAssessmentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T15:06:38.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "FinalAssessmentDto.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DTOs\\SkillAssessment\\FinalAssessmentDto.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\DTOs\\SkillAssessment\\FinalAssessmentDto.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DTOs\\SkillAssessment\\FinalAssessmentDto.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\DTOs\\SkillAssessment\\FinalAssessmentDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T16:37:07.543Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "SkillResultDto.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DTOs\\SkillAssessment\\SkillResultDto.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\DTOs\\SkillAssessment\\SkillResultDto.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DTOs\\SkillAssessment\\SkillResultDto.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\DTOs\\SkillAssessment\\SkillResultDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T15:05:28.429Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "QuestionNode.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DataStructures\\Trees\\QuestionNode.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\DataStructures\\Trees\\QuestionNode.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DataStructures\\Trees\\QuestionNode.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\DataStructures\\Trees\\QuestionNode.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T15:08:05.037Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "StartAssessmentDto.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DTOs\\SkillAssessment\\StartAssessmentDto.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\DTOs\\SkillAssessment\\StartAssessmentDto.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DTOs\\SkillAssessment\\StartAssessmentDto.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\DTOs\\SkillAssessment\\StartAssessmentDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T15:04:33.7Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T10:17:33.311Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Skill.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Models\\Skill.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\Models\\Skill.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Models\\Skill.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\Models\\Skill.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T12:20:11.144Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Models\\User.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\Models\\User.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Models\\User.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T10:30:52.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Services\\AuthServices\\IAuthService.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\Services\\AuthServices\\IAuthService.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\Services\\AuthServices\\IAuthService.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\Services\\AuthServices\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T10:23:34.536Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "HashTable.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DataStructures\\HashTable.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\DataStructures\\HashTable.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DataStructures\\HashTable.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\DataStructures\\HashTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T10:25:32.342Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "LinkedList.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DataStructures\\LinkedList.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\DataStructures\\LinkedList.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DataStructures\\LinkedList.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\DataStructures\\LinkedList.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T10:25:50.872Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "PersonalizedLearningPath.csproj",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\PersonalizedLearningPath.csproj",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\PersonalizedLearningPath.csproj",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\PersonalizedLearningPath.csproj",
+              "RelativeToolTip": "PersonalizedLearningPath\\PersonalizedLearningPath.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-13T10:21:51.461Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "RegisterDTO.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DTOs\\RegisterDTO.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\DTOs\\RegisterDTO.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DTOs\\RegisterDTO.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\DTOs\\RegisterDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T10:26:39.278Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "LoginDTO.cs",
+              "DocumentMoniker": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DTOs\\LoginDTO.cs",
+              "RelativeDocumentMoniker": "PersonalizedLearningPath\\DTOs\\LoginDTO.cs",
+              "ToolTip": "D:\\University\\CS 2024-2028\\3rd Semester\\DSA Lab\\FinalProject\\Backend\\PersonalizedLearningPath\\PersonalizedLearningPath\\DTOs\\LoginDTO.cs",
+              "RelativeToolTip": "PersonalizedLearningPath\\DTOs\\LoginDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T10:26:59.862Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

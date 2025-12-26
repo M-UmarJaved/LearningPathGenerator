@@ -1,0 +1,108 @@
+﻿using Microsoft.EntityFrameworkCore;
+using PersonalizedLearningPath.Models;
+
+namespace PersonalizedLearningPath.Data;
+
+public class AppDbContext : DbContext
+{
+    public AppDbContext(DbContextOptions<AppDbContext> options)
+        : base(options)
+    {
+    }
+
+    // Tables
+    public DbSet<User> Users { get; set; } = null!;
+    public DbSet<Question> Questions { get; set; } = null!;
+    public DbSet<Skill> Skills { get; set; } = null!;
+    public DbSet<UserSkillAssessment> UserSkillAssessments { get; set; } = null!;
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        // User table configuration
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.ToTable("Users");
+            entity.HasKey(u => u.Id);
+
+            entity.Property(u => u.FullName)
+                  .IsRequired()
+                  .HasMaxLength(100);
+
+            entity.Property(u => u.Email)
+                  .IsRequired()
+                  .HasMaxLength(100);
+
+            entity.Property(u => u.PasswordHash)
+                  .IsRequired();
+        });
+
+        // Question table configuration
+        modelBuilder.Entity<Question>(entity =>
+        {
+            entity.ToTable("Questions");
+            entity.HasKey(q => q.QuestionId);
+
+            entity.Property(q => q.QuestionText).IsRequired();
+            entity.Property(q => q.ChoiceA).IsRequired();
+            entity.Property(q => q.ChoiceB).IsRequired();
+            entity.Property(q => q.ChoiceC).IsRequired();
+            entity.Property(q => q.CorrectAnswer).IsRequired();
+            entity.Property(q => q.DifficultyLevel).IsRequired();
+
+            // Relationship: Question -> Skill (many-to-one)
+            entity.HasOne(q => q.Skill)
+                  .WithMany(s => s.Questions)
+                  .HasForeignKey(q => q.SkillId)
+                  .OnDelete(DeleteBehavior.Cascade);
+        });
+
+        // Skill table configuration
+        modelBuilder.Entity<Skill>(entity =>
+        {
+            entity.ToTable("Skills");
+            entity.HasKey(s => s.SkillId);
+
+            entity.Property(s => s.SkillName)
+                  .IsRequired()
+                  .HasMaxLength(100);
+        });
+
+        // UserSkillAssessment table configuration
+        modelBuilder.Entity<UserSkillAssessment>(entity =>
+        {
+            entity.ToTable("UserSkillAssessments");
+            entity.HasKey(usa => usa.Id);
+
+            entity.Property(usa => usa.FinalLevel)
+                  .IsRequired()
+                  .HasMaxLength(50);
+
+            entity.Property(usa => usa.CorrectAnswers)
+                  .IsRequired();
+
+            // Set DB-provider-appropriate default for AssessedAt
+            var provider = Database.ProviderName ?? string.Empty;
+            var defaultSql = provider.Contains("MySql", StringComparison.OrdinalIgnoreCase) ||
+                             provider.Contains("MariaDb", StringComparison.OrdinalIgnoreCase)
+                             ? "CURRENT_TIMESTAMP"
+                             : "GETUTCDATE()";
+
+            entity.Property(usa => usa.AssessedAt)
+                  .IsRequired()
+                  .HasDefaultValueSql(defaultSql);
+
+            // Relationships
+            entity.HasOne(usa => usa.User)
+                  .WithMany(u => u.UserSkillAssessments)
+                  .HasForeignKey(usa => usa.UserId)
+                  .OnDelete(DeleteBehavior.Cascade);
+
+            entity.HasOne(usa => usa.Skill)
+                  .WithMany(s => s.UserSkillAssessments)
+                  .HasForeignKey(usa => usa.SkillId)
+                  .OnDelete(DeleteBehavior.Cascade);
+        });
+    }
+}

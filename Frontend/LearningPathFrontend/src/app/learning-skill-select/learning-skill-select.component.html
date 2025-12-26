@@ -1,0 +1,26 @@
+<div class="page">
+  <div class="card">
+    <div class="header">
+      <div>
+        <h2>Select a Skill</h2>
+        <p class="sub">We will generate your full learning roadmap automatically.</p>
+      </div>
+    </div>
+
+    <div *ngIf="loading" class="status">Loading...</div>
+    <div *ngIf="error" class="status error">{{ error }}</div>
+
+    <div class="content" *ngIf="!loading">
+      <div class="form-group">
+        <label>Skill</label>
+        <div class="select-wrapper">
+          <select [(ngModel)]="selectedSkillId">
+            <option *ngFor="let s of skills" [ngValue]="s.skillId">{{ s.skillName }}</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" (click)="generatePath()" [disabled]="loading || !selectedSkillId">Generate Learning Path</button>
+    </div>
+  </div>
+</div>

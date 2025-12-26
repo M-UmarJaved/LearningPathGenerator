@@ -1,0 +1,330 @@
+[
+  {
+    "ContainingType": "PersonalizedLearningPath.API.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PersonalizedLearningPath.DTOs.LoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalizedLearningPath.API.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PersonalizedLearningPath.DTOs.RegisterDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalizedLearningPath.Controllers.ConceptDependencyController",
+    "Method": "CreateConcept",
+    "RelativePath": "api/ConceptDependency/concept",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PersonalizedLearningPath.DTOs.ConceptDependency.CreateConceptDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalizedLearningPath.Controllers.ConceptDependencyController",
+    "Method": "CreatePrerequisite",
+    "RelativePath": "api/ConceptDependency/prerequisite",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PersonalizedLearningPath.DTOs.ConceptDependency.CreatePrerequisiteDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalizedLearningPath.Controllers.ConceptDependencyController",
+    "Method": "GetConceptsBySkill",
+    "RelativePath": "api/ConceptDependency/skill/{skillId}/concepts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "skillId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalizedLearningPath.Controllers.ConceptDependencyController",
+    "Method": "GetSkillGraph",
+    "RelativePath": "api/ConceptDependency/skill/{skillId}/graph",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "skillId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalizedLearningPath.Controllers.CoursesController",
+    "Method": "Create",
+    "RelativePath": "api/courses",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PersonalizedLearningPath.DTOs.LearningPath.CreateCourseDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalizedLearningPath.Controllers.CoursesController",
+    "Method": "GetById",
+    "RelativePath": "api/courses/{courseId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalizedLearningPath.Controllers.CoursesController",
+    "Method": "AddVideo",
+    "RelativePath": "api/courses/{courseId}/videos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "PersonalizedLearningPath.DTOs.LearningPath.CreateCourseVideoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalizedLearningPath.Controllers.CoursesController",
+    "Method": "GetBySkill",
+    "RelativePath": "api/courses/skill/{skillId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "skillId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalizedLearningPath.Controllers.DashboardController",
+    "Method": "GetSummary",
+    "RelativePath": "api/dashboard/summary",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalizedLearningPath.Controllers.LearningPathController",
+    "Method": "GetById",
+    "RelativePath": "api/learning-path/{pathId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pathId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalizedLearningPath.Controllers.LearningPathController",
+    "Method": "Generate",
+    "RelativePath": "api/learning-path/generate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PersonalizedLearningPath.DTOs.LearningPath.GenerateLearningPathRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalizedLearningPath.Controllers.ProgressController",
+    "Method": "GetCourseProgress",
+    "RelativePath": "api/progress/course/{courseId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalizedLearningPath.Controllers.ProgressController",
+    "Method": "MarkVideo",
+    "RelativePath": "api/progress/video",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PersonalizedLearningPath.DTOs.LearningPath.MarkVideoRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalizedLearningPath.Controllers.SeedController",
+    "Method": "SeedDashboard",
+    "RelativePath": "api/seed/dashboard",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalizedLearningPath.Controllers.SkillAssessmentController",
+    "Method": "Answer",
+    "RelativePath": "api/skill-assessment/answer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PersonalizedLearningPath.DTOs.SkillAssessment.AnswerDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalizedLearningPath.Controllers.SkillAssessmentController",
+    "Method": "Start",
+    "RelativePath": "api/skill-assessment/start/{skillId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "skillId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalizedLearningPath.Controllers.SkillAssessmentController",
+    "Method": "Submit",
+    "RelativePath": "api/skill-assessment/submit",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PersonalizedLearningPath.DTOs.SkillAssessment.AnswerDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalizedLearningPath.Controllers.SkillsController",
+    "Method": "GetAll",
+    "RelativePath": "api/skills",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[PersonalizedLearningPath.DTOs.SkillDto, PersonalizedLearningPath, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

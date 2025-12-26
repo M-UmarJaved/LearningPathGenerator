@@ -1,0 +1,239 @@
+<!-- ===============================================
+     PROFESSIONAL LEARNING DASHBOARD
+     =============================================== -->
+
+<div class="dashboard-container">
+  
+  <!-- SIDEBAR NAVIGATION -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <span class="logo-icon">🎓</span>
+        <span class="logo-text">LearnPath</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="javascript:void(0)" class="nav-item active">
+        <span class="nav-icon">📊</span>
+        <span class="nav-text">Dashboard</span>
+      </a>
+      <a href="javascript:void(0)" class="nav-item">
+        <span class="nav-icon">📚</span>
+        <span class="nav-text">My Courses</span>
+      </a>
+      <a href="javascript:void(0)" class="nav-item">
+        <span class="nav-icon">🗺️</span>
+        <span class="nav-text">Learning Paths</span>
+      </a>
+      <a href="javascript:void(0)" class="nav-item" (click)="startNewAssessment()">
+        <span class="nav-icon">✅</span>
+        <span class="nav-text">Skill Assessment</span>
+      </a>
+      <a href="javascript:void(0)" class="nav-item">
+        <span class="nav-icon">🏆</span>
+        <span class="nav-text">Achievements</span>
+      </a>
+      <a href="javascript:void(0)" class="nav-item">
+        <span class="nav-icon">⚙️</span>
+        <span class="nav-text">Settings</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button class="logout-btn" (click)="logout()">
+        <span class="nav-icon">🚪</span>
+        <span>Logout</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    
+    <!-- TOP HEADER BAR -->
+    <header class="top-header">
+      <div class="header-left">
+        <h1 class="page-title">Welcome back, {{ userName }}! 👋</h1>
+        <p class="page-subtitle">Continue your learning journey</p>
+      </div>
+      <div class="header-right">
+        <button class="start-learning-btn" (click)="startLearning()">Start Learning</button>
+        <button class="icon-btn">
+          <span class="notification-badge">3</span>
+          🔔
+        </button>
+        <div class="user-avatar">{{ userName.charAt(0).toUpperCase() }}</div>
+      </div>
+    </header>
+
+    <!-- STATS CARDS -->
+    <section class="stats-section">
+      <div class="stat-card">
+        <div class="stat-icon stat-icon-purple">📘</div>
+        <div class="stat-info">
+          <div class="stat-value">{{ stats.coursesCompleted }}</div>
+          <div class="stat-label">Courses Completed</div>
+        </div>
+        <div class="stat-trend positive">+12%</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon stat-icon-blue">⏱️</div>
+        <div class="stat-info">
+          <div class="stat-value">{{ stats.hoursLearned }}</div>
+          <div class="stat-label">Hours Learned</div>
+        </div>
+        <div class="stat-trend positive">+8%</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon stat-icon-orange">🔥</div>
+        <div class="stat-info">
+          <div class="stat-value">{{ stats.currentStreak }}</div>
+          <div class="stat-label">Day Streak</div>
+        </div>
+        <div class="stat-trend positive">Keep going!</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon stat-icon-green">⭐</div>
+        <div class="stat-info">
+          <div class="stat-value">{{ stats.skillsAcquired }}</div>
+          <div class="stat-label">Skills Acquired</div>
+        </div>
+        <div class="stat-trend positive">+15%</div>
+      </div>
+    </section>
+
+    <!-- LEARNING PATHS -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Your Learning Paths</h2>
+        <a href="javascript:void(0)" class="view-all-link">View All →</a>
+      </div>
+
+      <div class="learning-paths-grid">
+        <div class="path-card" *ngFor="let path of learningPaths" (click)="explorePath(path)">
+          <div class="path-icon">{{ path.icon }}</div>
+          <div class="path-content">
+            <h3 class="path-name">{{ path.name }}</h3>
+            <p class="path-description">{{ path.description }}</p>
+            <div class="path-meta">
+              <span class="path-meta-item">{{ path.courses }} courses</span>
+              <span class="path-meta-separator">•</span>
+              <span class="path-meta-item">{{ path.estimatedTime }}</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar-bg">
+                <div class="progress-bar-fill" [style.width.%]="path.progress"></div>
+              </div>
+              <span class="progress-text">{{ path.progress }}%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTINUE LEARNING -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Continue Learning</h2>
+        <a href="javascript:void(0)" class="view-all-link">See All Courses →</a>
+      </div>
+
+      <div class="courses-grid">
+        <div class="course-card" *ngFor="let course of activeCourses" (click)="continueCourse(course)">
+          <div class="course-thumbnail">
+            <img [src]="course.thumbnail" [alt]="course.title">
+            <div class="course-overlay">
+              <button class="play-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M8 5v14l11-7z" fill="currentColor"/>
+                </svg>
+              </button>
+            </div>
+            <div class="course-difficulty" [ngClass]="getDifficultyClass(course.difficulty)">
+              {{ course.difficulty }}
+            </div>
+          </div>
+          <div class="course-content">
+            <div class="course-category">{{ course.category }}</div>
+            <h3 class="course-title">{{ course.title }}</h3>
+            <p class="course-instructor">👤 {{ course.instructor }}</p>
+            <div class="course-meta">
+              <span class="course-rating">
+                ⭐ {{ course.rating }}
+              </span>
+              <span class="course-duration">
+                ⏱️ {{ course.duration }}
+              </span>
+            </div>
+            <div class="course-progress">
+              <div class="progress-bar-bg">
+                <div class="progress-bar-fill" [style.width.%]="course.progress"></div>
+              </div>
+              <span class="progress-text">{{ course.progress }}% complete</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECOMMENDED COURSES -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Recommended for You</h2>
+        <a href="javascript:void(0)" class="view-all-link">Explore More →</a>
+      </div>
+
+      <div class="courses-grid">
+        <div class="course-card" *ngFor="let course of recommendedCourses" (click)="startCourse(course)">
+          <div class="course-thumbnail">
+            <img [src]="course.thumbnail" [alt]="course.title">
+            <div class="course-overlay">
+              <button class="enroll-btn">Start Course</button>
+            </div>
+            <div class="course-difficulty" [ngClass]="getDifficultyClass(course.difficulty)">
+              {{ course.difficulty }}
+            </div>
+          </div>
+          <div class="course-content">
+            <div class="course-category">{{ course.category }}</div>
+            <h3 class="course-title">{{ course.title }}</h3>
+            <p class="course-instructor">👤 {{ course.instructor }}</p>
+            <div class="course-meta">
+              <span class="course-rating">
+                ⭐ {{ course.rating }}
+              </span>
+              <span class="course-enrolled">
+                👥 {{ (course.enrolled / 1000).toFixed(1) }}k
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECENT ACTIVITY -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Recent Activity</h2>
+      </div>
+
+      <div class="activity-list">
+        <div class="activity-item" *ngFor="let activity of recentActivity">
+          <div class="activity-icon">✓</div>
+          <div class="activity-content">
+            <p class="activity-text">
+              <strong>{{ activity.action }}</strong> in {{ activity.course }}
+            </p>
+            <p class="activity-time">{{ activity.time }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</div>
