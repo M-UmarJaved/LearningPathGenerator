@@ -1,0 +1,39 @@
+<div class="page">
+  <div class="card">
+    <div class="header">
+      <div>
+        <h2>Learning Path</h2>
+        <p class="sub" *ngIf="path">{{ path.skillName }} • Status: {{ path.status }}</p>
+      </div>
+      <button class="btn" (click)="startLearning()" [disabled]="!path?.activeCourseId">Start Learning</button>
+    </div>
+
+    <div *ngIf="loading" class="status">Loading...</div>
+    <div *ngIf="error" class="status error">{{ error }}</div>
+
+    <div *ngIf="path" class="content">
+      <div class="progress">
+        <div class="lp-progress">
+          <div class="lp-progress__fill" [style.width.%]="path.skillCompletionPercentage"></div>
+          <div class="lp-progress__text">Overall Skill Progress: {{ path.skillCompletionPercentage }}%</div>
+        </div>
+      </div>
+
+      <div class="list">
+        <div class="row" *ngFor="let c of path.courses" [class.active]="c.courseId === path.activeCourseId">
+          <div class="left">
+            <div class="title">{{ c.courseTitle }}</div>
+            <div class="meta">{{ c.courseLevel }} • {{ c.totalVideos }} videos</div>
+          </div>
+
+          <div class="right">
+            <div class="pct">{{ c.completionPercentage }}%</div>
+            <div class="pill" [class.done]="c.isCompleted" [class.current]="c.courseId === path.activeCourseId">
+              {{ c.isCompleted ? 'Completed' : (c.courseId === path.activeCourseId ? 'Active' : 'Locked') }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

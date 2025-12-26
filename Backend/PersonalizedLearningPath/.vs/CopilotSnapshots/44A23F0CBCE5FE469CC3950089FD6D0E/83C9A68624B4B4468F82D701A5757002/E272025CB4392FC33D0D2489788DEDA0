@@ -1,0 +1,26 @@
+﻿using PersonalizedLearningPath.Models;
+
+namespace PersonalizedLearningPath.DataStructures.Trees
+{
+    public class BinaryQuestionTree
+    {
+        private Question[] tree;
+
+        public BinaryQuestionTree(Question[] questions)
+        {
+            tree = questions;
+        }
+
+        public Question GetRoot() => tree[0];
+
+        public Question GetNext(int currentIndex, bool isCorrect)
+        {
+            int nextIndex = isCorrect
+                ? (2 * currentIndex + 2)
+                : (2 * currentIndex + 1);
+
+            return nextIndex >= tree.Length ? null : tree[nextIndex];
+        }
+    }
+}
+

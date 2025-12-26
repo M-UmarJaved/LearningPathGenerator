@@ -1,0 +1,109 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using PersonalizedLearningPath.Data;
+using PersonalizedLearningPath.DataStructures.Trees;
+using PersonalizedLearningPath.DTOs.SkillAssessment;
+using PersonalizedLearningPath.Models;
+
+namespace PersonalizedLearningPath.Services.SkillAssessment
+{
+    public class SkillAssessmentService : ISkillAssessmentService
+    {
+        private readonly AppDbContext _context;
+
+        public SkillAssessmentService(AppDbContext context)
+        {
+            _context = context;
+        }
+
+        public BinaryQuestionTree BuildTree(int skillId)
+        {
+            var questions = _context.Questions
+                .Where(q => q.SkillId == skillId)
+                .OrderBy(q => q.TreeIndex)
+                .Take(7)
+                .ToArray();
+
+            // Ensure the skill has exactly 7 questions arranged as a complete binary tree (indices 0..6)
+            if (questions.Length != 7)
+            {
+                throw new InvalidOperationException($"Skill {skillId} must have exactly 7 questions (found {questions.Length}).");
+            }
+
+            for (int i = 0; i < 7; i++)
+            {
+                if (questions[i].TreeIndex != i)
+                {
+                    throw new InvalidOperationException($"Questions for skill {skillId} must have TreeIndex values 0..6 in order. Expected index {i} at position {i}, found {questions[i].TreeIndex}.");
+                }
+            }
+
+            return new BinaryQuestionTree(questions);
+        }
+
+        public QuestionDto StartAssessment(int skillId)
+        {
+            var tree = BuildTree(skillId);
+            return Map(tree.GetRoot());
+        }
+
+        public FinalAssessmentDto SubmitAnswer(AnswerDto dto)
+        {
+            var tree = BuildTree(dto.SkillId);
+            var questions = _context.Questions.Where(q => q.SkillId == dto.SkillId).ToArray();
+
+            var current = questions.First(q => q.TreeIndex == dto.CurrentIndex && q.SkillId == dto.SkillId);
+            bool correct = current.CorrectAnswer == dto.SelectedOption;
+
+            int correctCount = dto.CorrectCount + (correct ? 1 : 0);
+            int totalCount = dto.TotalCount + 1;
+
+            var next = tree.GetNext(dto.CurrentIndex, correct);
+
+            if (next == null)
+            {
+                string level =
+                    correctCount <= 2 ? "Beginner" :
+                    correctCount <= 4 ? "Intermediate" :
+                    "Advanced";
+
+                _context.UserSkillAssessments.Add(new UserSkillAssessment
+                {
+                    UserId = dto.UserId,
+                    SkillId = dto.SkillId,
+                    CorrectAnswers = correctCount,
+                    TotalAnswered = totalCount,
+                    SkillLevel = level,
+                    CompletedAt = DateTime.Now
+                });
+
+                _context.SaveChanges();
+
+                return new FinalAssessmentDto
+                {
+                    Completed = true,
+                    SkillLevel = level
+                };
+            }
+
+            return new FinalAssessmentDto
+            {
+                Completed = false,
+                NextQuestion = Map(next)
+            };
+        }
+
+        private QuestionDto Map(Question q) => new QuestionDto
+        {
+            QuestionId = q.QuestionId,
+            TreeIndex = q.TreeIndex,
+            QuestionText = q.QuestionText,
+            ChoiceA = q.ChoiceA,
+            ChoiceB = q.ChoiceB,
+            ChoiceC = q.ChoiceC
+        };
+    }
+
+}

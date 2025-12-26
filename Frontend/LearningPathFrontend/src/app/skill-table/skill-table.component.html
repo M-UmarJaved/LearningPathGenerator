@@ -1,0 +1,40 @@
+<div class="page">
+	<div class="card">
+		<h2>Select your skills</h2>
+		<p class="sub">Choose the skills you’ve worked on. You will answer 5 questions per skill.</p>
+
+		<div class="status" *ngIf="loading">Loading skills…</div>
+		<div class="status error" *ngIf="!loading && error">{{ error }}</div>
+
+		<div class="table" *ngIf="!loading && !error">
+			<div class="row header">
+				<div>Pick</div>
+				<div>Skill</div>
+				<div>Order</div>
+			</div>
+
+			<div class="row" *ngFor="let s of skills">
+				<div>
+					<input
+						type="checkbox"
+						[checked]="isSelected(s.skillId)"
+						(change)="toggle(s, $any($event.target).checked)"
+					/>
+				</div>
+				<div class="skill-name">{{ s.skillName }}</div>
+				<div class="order">
+					{{ getSelectionOrder(s.skillId) }}
+				</div>
+			</div>
+		</div>
+
+		<div class="footer">
+			<div class="selected" *ngIf="selected.length">
+				Selected: {{ selectedNames }}
+			</div>
+			<button class="btn" (click)="startAssessment()" [disabled]="selected.length === 0">
+				Next
+			</button>
+		</div>
+	</div>
+</div>

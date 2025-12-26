@@ -1,0 +1,161 @@
+<app-navbar></app-navbar>
+
+<div class="features-page">
+  <!-- Hero Header -->
+  <section class="features-hero">
+    <div class="hero-container">
+      <h1 class="page-title">Powerful Features for Accelerated Learning</h1>
+      <p class="page-subtitle">
+        Discover how our intelligent platform transforms the way you learn
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Features -->
+  <section class="main-features">
+    <div class="features-container">
+      <!-- Feature 1 -->
+      <div class="feature-item">
+        <div class="feature-visual">
+          <div class="visual-icon">🎯</div>
+          <div class="visual-decoration decoration-1"></div>
+        </div>
+        <div class="feature-content">
+          <h2 class="feature-heading">Intelligent Skill Assessment</h2>
+          <p class="feature-text">
+            Our AI-powered assessment engine evaluates your current skill level across multiple domains.
+            Answer adaptive questions that become more challenging as you demonstrate proficiency,
+            ensuring accurate skill measurement.
+          </p>
+          <ul class="feature-list">
+            <li>✓ Adaptive difficulty based on performance</li>
+            <li>✓ Multi-domain skill evaluation</li>
+            <li>✓ Detailed performance analytics</li>
+            <li>✓ Personalized skill recommendations</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="feature-item reverse">
+        <div class="feature-visual">
+          <div class="visual-icon">🧠</div>
+          <div class="visual-decoration decoration-2"></div>
+        </div>
+        <div class="feature-content">
+          <h2 class="feature-heading">Graph-Based Learning Paths</h2>
+          <p class="feature-text">
+            Advanced graph algorithms analyze concept dependencies and prerequisite relationships
+            to create optimal learning sequences. Our system uses topological sorting and
+            dependency resolution to ensure you learn concepts in the right order.
+          </p>
+          <ul class="feature-list">
+            <li>✓ Dependency-aware course sequencing</li>
+            <li>✓ Prerequisite validation</li>
+            <li>✓ Multiple path options</li>
+            <li>✓ Dynamic path adjustment</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="feature-item">
+        <div class="feature-visual">
+          <div class="visual-icon">📈</div>
+          <div class="visual-decoration decoration-3"></div>
+        </div>
+        <div class="feature-content">
+          <h2 class="feature-heading">Real-Time Progress Tracking</h2>
+          <p class="feature-text">
+            Monitor your learning journey with comprehensive dashboards and analytics.
+            Track course completion, skill proficiency gains, and time invested across
+            different topics. Visualize your progress with interactive charts and graphs.
+          </p>
+          <ul class="feature-list">
+            <li>✓ Interactive progress dashboards</li>
+            <li>✓ Skill proficiency meters</li>
+            <li>✓ Course completion tracking</li>
+            <li>✓ Learning streaks and milestones</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="feature-item reverse">
+        <div class="feature-visual">
+          <div class="visual-icon">🎓</div>
+          <div class="visual-decoration decoration-4"></div>
+        </div>
+        <div class="feature-content">
+          <h2 class="feature-heading">Curated Video Content</h2>
+          <p class="feature-text">
+            Access high-quality video courses from industry experts. Each course is carefully
+            selected and organized into digestible modules. Our video player includes features
+            like playback speed control, bookmarking, and progress synchronization.
+          </p>
+          <ul class="feature-list">
+            <li>✓ Expert-led video courses</li>
+            <li>✓ Module-based organization</li>
+            <li>✓ Interactive video player</li>
+            <li>✓ Automatic progress saving</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Feature 5 -->
+      <div class="feature-item">
+        <div class="feature-visual">
+          <div class="visual-icon">⚡</div>
+          <div class="visual-decoration decoration-5"></div>
+        </div>
+        <div class="feature-content">
+          <h2 class="feature-heading">Adaptive Learning Engine</h2>
+          <p class="feature-text">
+            Experience personalized content recommendations that adapt to your learning pace
+            and style. Our engine continuously analyzes your performance to suggest the most
+            relevant courses and optimize your learning path for maximum efficiency.
+          </p>
+          <ul class="feature-list">
+            <li>✓ Personalized content recommendations</li>
+            <li>✓ Pace-adaptive scheduling</li>
+            <li>✓ Learning style optimization</li>
+            <li>✓ Continuous path refinement</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Feature 6 -->
+      <div class="feature-item reverse">
+        <div class="feature-visual">
+          <div class="visual-icon">🔄</div>
+          <div class="visual-decoration decoration-6"></div>
+        </div>
+        <div class="feature-content">
+          <h2 class="feature-heading">Continuous Skill Evolution</h2>
+          <p class="feature-text">
+            Retake assessments to measure skill improvements, update your learning paths as
+            your goals evolve, and continuously expand your knowledge base. Our platform
+            supports lifelong learning with periodic skill re-evaluation.
+          </p>
+          <ul class="feature-list">
+            <li>✓ Periodic skill reassessment</li>
+            <li>✓ Learning path updates</li>
+            <li>✓ Goal tracking and adjustment</li>
+            <li>✓ Skill decay prevention</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="features-cta">
+    <div class="cta-box">
+      <h2 class="cta-heading">Experience These Features Today</h2>
+      <p class="cta-text">Start your personalized learning journey now</p>
+      <button class="cta-button" [routerLink]="['/register']" [queryParams]="{ fromLanding: 1 }">Get Started Free</button>
+    </div>
+  </section>
+</div>
+
+<app-footer></app-footer>

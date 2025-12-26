@@ -1,0 +1,161 @@
+<app-navbar></app-navbar>
+
+<div class="about-page">
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="hero-container">
+      <h1 class="page-title">About LearnPath</h1>
+      <p class="page-subtitle">
+        Transforming education through intelligent, personalized learning experiences
+      </p>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="mission-section">
+    <div class="content-container">
+      <div class="mission-content">
+        <div class="mission-icon">🎯</div>
+        <h2 class="section-heading">Our Mission</h2>
+        <p class="section-text">
+          At LearnPath, we believe that everyone deserves access to high-quality, personalized education.
+          Our mission is to revolutionize online learning by combining cutting-edge artificial intelligence
+          with pedagogical best practices to create adaptive learning paths that meet each learner exactly
+          where they are.
+        </p>
+        <p class="section-text">
+          We're committed to making education more accessible, effective, and engaging by leveraging
+          advanced algorithms, data structures, and machine learning to understand how people learn best
+          and deliver content that maximizes retention and skill development.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Section -->
+  <section class="technology-section">
+    <div class="content-container">
+      <h2 class="section-heading centered">Powered by Advanced Technology</h2>
+      <p class="section-subtitle centered">
+        Built with modern algorithms and data structures for optimal learning outcomes
+      </p>
+
+      <div class="tech-grid">
+        <div class="tech-card">
+          <div class="tech-icon">🔗</div>
+          <h3 class="tech-title">Graph Algorithms</h3>
+          <p class="tech-desc">
+            Topological sorting and dependency resolution ensure concepts are learned in the optimal sequence
+          </p>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon">🌲</div>
+          <h3 class="tech-title">Tree Structures</h3>
+          <p class="tech-desc">
+            Hierarchical skill trees organize knowledge domains and track learning progression efficiently
+          </p>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon">⚡</div>
+          <h3 class="tech-title">Hash Tables</h3>
+          <p class="tech-desc">
+            Fast lookups and data retrieval for instant access to your learning history and recommendations
+          </p>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon">🔍</div>
+          <h3 class="tech-title">Search Algorithms</h3>
+          <p class="tech-desc">
+            Intelligent content discovery using advanced search techniques for personalized recommendations
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="values-section">
+    <div class="content-container">
+      <h2 class="section-heading centered">Our Core Values</h2>
+
+      <div class="values-grid">
+        <div class="value-item">
+          <div class="value-number">01</div>
+          <h3 class="value-title">Personalization</h3>
+          <p class="value-desc">
+            Every learner is unique. We tailor content, pacing, and recommendations to individual needs and goals.
+          </p>
+        </div>
+
+        <div class="value-item">
+          <div class="value-number">02</div>
+          <h3 class="value-title">Excellence</h3>
+          <p class="value-desc">
+            We curate only the highest quality content and continuously improve our algorithms for better outcomes.
+          </p>
+        </div>
+
+        <div class="value-item">
+          <div class="value-number">03</div>
+          <h3 class="value-title">Accessibility</h3>
+          <p class="value-desc">
+            Quality education should be available to everyone, regardless of background or location.
+          </p>
+        </div>
+
+        <div class="value-item">
+          <div class="value-number">04</div>
+          <h3 class="value-title">Innovation</h3>
+          <p class="value-desc">
+            We constantly explore new technologies and methodologies to enhance the learning experience.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="content-container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">👥</div>
+          <div class="stat-value">10,000+</div>
+          <div class="stat-label">Active Learners</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">📚</div>
+          <div class="stat-value">500+</div>
+          <div class="stat-label">Quality Courses</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">🌍</div>
+          <div class="stat-value">50+</div>
+          <div class="stat-label">Countries Served</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">⭐</div>
+          <div class="stat-value">95%</div>
+          <div class="stat-label">Satisfaction Rate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="about-cta">
+    <div class="cta-container">
+      <h2 class="cta-heading">Join Our Learning Community</h2>
+      <p class="cta-text">Start your personalized learning journey today</p>
+      <button class="cta-button" [routerLink]="['/register']" [queryParams]="{ fromLanding: 1 }">Get Started Free</button>
+    </div>
+  </section>
+</div>
+
+<app-footer></app-footer>

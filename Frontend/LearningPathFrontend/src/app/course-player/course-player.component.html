@@ -1,0 +1,61 @@
+<div class="page">
+  <div class="card">
+    <div class="header">
+      <div>
+        <h2>Course Player</h2>
+        <p class="sub" *ngIf="course">{{ course.courseTitle }} • {{ course.courseLevel }}</p>
+      </div>
+    </div>
+
+    <div *ngIf="loading" class="status">Loading...</div>
+    <div *ngIf="error" class="status error">{{ error }}</div>
+    <div *ngIf="message" class="status ok">{{ message }}</div>
+
+    <div class="content" *ngIf="course && embedUrl">
+      <div class="video">
+        <iframe
+          [src]="embedUrl"
+          title="YouTube video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="progress">
+        <div class="cp-progress">
+          <div class="cp-progress__fill" [style.width.%]="coursePct"></div>
+          <div class="cp-progress__text">Course Progress: {{ coursePct }}%</div>
+        </div>
+
+        <div class="cp-progress cp-progress--skill" *ngIf="skillPct > 0">
+          <div class="cp-progress__fill" [style.width.%]="skillPct"></div>
+          <div class="cp-progress__text">Overall Skill Progress: {{ skillPct }}%</div>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <h3>Course Videos</h3>
+        <div class="item" *ngFor="let v of course.videos">
+          <div class="row">
+            <button class="video-btn" type="button" (click)="selectVideo(v.videoIndex)" [class.active]="v.videoIndex === selectedVideoIndex">
+              Play
+            </button>
+
+            <div class="meta">
+              <div class="title">{{ v.videoIndex }}. {{ v.videoTitle }}</div>
+            </div>
+
+            <label class="watch">
+              <input
+                type="checkbox"
+                [checked]="watched[v.videoIndex - 1]"
+                (change)="onVideoCheckboxChange(v.videoIndex, $event)" />
+              Watched
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

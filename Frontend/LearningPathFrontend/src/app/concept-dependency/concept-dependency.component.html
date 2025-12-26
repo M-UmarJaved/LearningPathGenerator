@@ -1,0 +1,100 @@
+<div class="page">
+  <div class="card">
+    <div class="header">
+      <div>
+        <h2>Concept Dependency Graph</h2>
+        <p class="sub">Add concepts, set prerequisites, and keep each skill as a DAG (no cycles).</p>
+      </div>
+
+      <div class="skill-select">
+        <label>Skill</label>
+        <select [(ngModel)]="selectedSkillId" (change)="onSkillChange()">
+          <option [ngValue]="null">Select a skill...</option>
+          <option *ngFor="let s of skills" [ngValue]="s.skillId">{{ s.skillName }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div *ngIf="loading" class="status">Loading...</div>
+    <div *ngIf="error" class="status error">{{ error }}</div>
+    <div *ngIf="message" class="status ok">{{ message }}</div>
+
+    <div class="grid" *ngIf="selectedSkillId">
+      <div class="panel">
+        <h3>Add Concept</h3>
+        <div class="field">
+          <label>Name</label>
+          <input [(ngModel)]="conceptName" placeholder="e.g., Variables" />
+        </div>
+        <div class="field">
+          <label>Description (optional)</label>
+          <textarea [(ngModel)]="conceptDescription" rows="3" placeholder="Short note..."></textarea>
+        </div>
+        <button class="btn" (click)="addConcept()" [disabled]="loading">Add Concept</button>
+      </div>
+
+      <div class="panel">
+        <h3>Add Prerequisite</h3>
+        <p class="hint">Creates an edge: prerequisite → concept</p>
+
+        <div class="field">
+          <label>Concept</label>
+          <select [(ngModel)]="targetConceptId">
+            <option [ngValue]="null">Select concept...</option>
+            <option *ngFor="let c of concepts" [ngValue]="c.conceptId">{{ c.name }}</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Prerequisite</label>
+          <select [(ngModel)]="prerequisiteId">
+            <option [ngValue]="null">Select prerequisite...</option>
+            <option *ngFor="let c of concepts" [ngValue]="c.conceptId">{{ c.name }}</option>
+          </select>
+        </div>
+
+        <button class="btn" (click)="addPrerequisite()" [disabled]="loading">Add Prerequisite</button>
+      </div>
+
+      <div class="panel wide">
+        <div class="panel-head">
+          <h3>Graph View — {{ selectedSkillName }}</h3>
+          <button class="btn ghost" (click)="refresh()" [disabled]="loading">Refresh</button>
+        </div>
+
+        <div *ngIf="!graph" class="empty">
+          No graph loaded yet.
+        </div>
+
+        <div *ngIf="graph" class="graph">
+          <div class="block">
+            <h4>Topological Order</h4>
+            <ol>
+              <li *ngFor="let id of graph.topologicalOrder">
+                {{ conceptNameById[id] || ('Concept ' + id) }}
+              </li>
+            </ol>
+          </div>
+
+          <div class="block">
+            <h4>Edges</h4>
+            <div class="edges" *ngIf="graph.edges.length > 0; else noEdges">
+              <div class="edge" *ngFor="let e of graph.edges">
+                <span class="pill">{{ conceptNameById[e.fromPrerequisiteId] || e.fromPrerequisiteId }}</span>
+                <span class="arrow">→</span>
+                <span class="pill">{{ conceptNameById[e.toConceptId] || e.toConceptId }}</span>
+              </div>
+            </div>
+            <ng-template #noEdges>
+              <div class="empty">No prerequisites yet.</div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!selectedSkillId && !loading" class="empty">
+      Select a skill to start building its concept graph.
+    </div>
+  </div>
+</div>
