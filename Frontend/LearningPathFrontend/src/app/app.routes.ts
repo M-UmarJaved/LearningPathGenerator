@@ -13,6 +13,7 @@ import { LandingComponent } from './landing/landing.component';
 import { FeaturesComponent } from './features/features.component';
 import { AboutComponent } from './about/about.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ProgressGraphComponent } from './progress-graph/progress-graph.component';
 
 export const routes: Routes = [
     // Landing Website Routes
@@ -46,6 +47,11 @@ export const routes: Routes = [
         path: 'dashboard',
         component: DashboardComponent,
         title: 'Dashboard'
+    },
+    {
+        path: 'progress-graph',
+        component: ProgressGraphComponent,
+        title: 'Progress Graph'
     },
     {
         path: 'assessment-result',

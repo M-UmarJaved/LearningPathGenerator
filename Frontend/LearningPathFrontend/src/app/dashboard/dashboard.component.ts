@@ -215,6 +215,10 @@ export class DashboardComponent implements OnInit {
     this.router.navigateByUrl('/learning-skill-select');
   }
 
+  goToProgressGraph(): void {
+    this.router.navigateByUrl('/progress-graph');
+  }
+
   logout(): void {
     this.auth.clearSession();
     this.router.navigateByUrl('/register');

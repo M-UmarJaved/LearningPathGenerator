@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PersonalizedLearningPath")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ff6287b2b2a7600efa6b01efbded85667ebe67c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3382c3bcf780b1cbbaae8b7e418e674299f701f")]
 [assembly: System.Reflection.AssemblyProductAttribute("PersonalizedLearningPath")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PersonalizedLearningPath")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

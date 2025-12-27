@@ -1,0 +1,337 @@
+<div class="dashboard-container">
+  <!-- SIDEBAR NAVIGATION -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <span class="logo-icon">🎓</span>
+        <span class="logo-text">LearnPath</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="nav-item" (click)="goDashboard()">
+        <span class="nav-icon">📊</span>
+        <span class="nav-text">Dashboard</span>
+      </a>
+      <a class="nav-item active">
+        <span class="nav-icon">📈</span>
+        <span class="nav-text">Progress Graph</span>
+      </a>
+      <a class="nav-item" (click)="goSkillAssessment()">
+        <span class="nav-icon">✅</span>
+        <span class="nav-text">Skill Assessment</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button class="logout-btn" (click)="logout()">
+        <span class="nav-icon">🚪</span>
+        <span>Logout</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <header class="top-header">
+      <div class="header-left">
+        <h1 class="page-title">Progress Graph</h1>
+        <p class="page-subtitle">A visual view of your learning progress, {{ userName }}</p>
+      </div>
+
+      <div class="header-right">
+        <button class="start-learning-btn" (click)="load()">Refresh</button>
+        <div class="user-avatar">{{ userName.charAt(0).toUpperCase() }}</div>
+      </div>
+    </header>
+
+    <section class="graph-page">
+      <div class="graph-summary" *ngIf="data() as d">
+        <div class="graph-stat">
+          <div class="graph-stat-icon courses-icon">📘</div>
+          <div class="graph-stat-info">
+            <div class="graph-stat-value">{{ d.summary.coursesCompleted }}</div>
+            <div class="graph-stat-label">Courses Completed</div>
+          </div>
+        </div>
+
+        <div class="graph-stat">
+          <div class="graph-stat-icon videos-icon">🎬</div>
+          <div class="graph-stat-info">
+            <div class="graph-stat-value">{{ d.summary.videosWatched }}</div>
+            <div class="graph-stat-label">Videos Watched</div>
+          </div>
+        </div>
+
+        <div class="graph-stat">
+          <div class="graph-stat-icon skills-icon">⭐</div>
+          <div class="graph-stat-info">
+            <div class="graph-stat-value">{{ d.summary.skillsLearned }}</div>
+            <div class="graph-stat-label">Skills Mastered</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="graph-state" *ngIf="loading()">
+        Loading your progress graph...
+      </div>
+
+      <div class="graph-state error" *ngIf="error() as e">
+        {{ e }}
+      </div>
+
+      <div class="graph-layout" *ngIf="data() as d">
+        <div class="graph-charts">
+          <!-- TOP-LEFT: Multi-ring radial progress -->
+          <div class="chart-card radial-card">
+            <div class="chart-header">
+              <div class="chart-title">📊 Overall Progress</div>
+              <div class="chart-subtitle">Multi-dimensional learning analytics</div>
+            </div>
+
+            <div class="chart-body center">
+              <svg class="radial" width="260" height="260" viewBox="0 0 260 260">
+                <defs>
+                  <linearGradient id="ringCourses" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0%" stop-color="#667eea" />
+                    <stop offset="100%" stop-color="#764ba2" />
+                  </linearGradient>
+                  <linearGradient id="ringVideos" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0%" stop-color="#f093fb" />
+                    <stop offset="100%" stop-color="#f5576c" />
+                  </linearGradient>
+                  <linearGradient id="ringSkills" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0%" stop-color="#4facfe" />
+                    <stop offset="100%" stop-color="#00f2fe" />
+                  </linearGradient>
+                  <filter id="glow">
+                    <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+                    <feMerge>
+                      <feMergeNode in="coloredBlur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                </defs>
+
+                <g transform="translate(130,130) rotate(-90)">
+                  <circle class="ring-bg" [attr.r]="ring().r1" cx="0" cy="0" />
+                  <circle class="ring-bg" [attr.r]="ring().r2" cx="0" cy="0" />
+                  <circle class="ring-bg" [attr.r]="ring().r3" cx="0" cy="0" />
+
+                  <circle
+                    class="ring ring-courses"
+                    [attr.r]="ring().r1"
+                    cx="0"
+                    cy="0"
+                    [attr.stroke-dasharray]="ring().c1"
+                    [attr.stroke-dashoffset]="ring().o1"
+                    filter="url(#glow)"
+                  />
+                  <circle
+                    class="ring ring-videos"
+                    [attr.r]="ring().r2"
+                    cx="0"
+                    cy="0"
+                    [attr.stroke-dasharray]="ring().c2"
+                    [attr.stroke-dashoffset]="ring().o2"
+                    filter="url(#glow)"
+                  />
+                  <circle
+                    class="ring ring-skills"
+                    [attr.r]="ring().r3"
+                    cx="0"
+                    cy="0"
+                    [attr.stroke-dasharray]="ring().c3"
+                    [attr.stroke-dashoffset]="ring().o3"
+                    filter="url(#glow)"
+                  />
+                </g>
+
+                <g class="radial-center">
+                  <text x="130" y="120" text-anchor="middle" class="radial-pct">
+                    {{ (overallPct() * 100) | number:'1.0-0' }}%
+                  </text>
+                  <text x="130" y="148" text-anchor="middle" class="radial-label">Progress</text>
+                </g>
+              </svg>
+
+              <div class="radial-legend">
+                <div class="radial-item">
+                  <span class="swatch courses"></span>
+                  <span>Courses: {{ (pctCourses() * 100) | number:'1.0-0' }}%</span>
+                </div>
+                <div class="radial-item">
+                  <span class="swatch videos"></span>
+                  <span>Videos: {{ (pctVideos() * 100) | number:'1.0-0' }}%</span>
+                </div>
+                <div class="radial-item">
+                  <span class="swatch skills"></span>
+                  <span>Skills: {{ (pctSkills() * 100) | number:'1.0-0' }}%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TOP-RIGHT: Horizontal bars -->
+          <div class="chart-card bars-card">
+            <div class="chart-header">
+              <div class="chart-title">📈 Progress Breakdown</div>
+              <div class="chart-subtitle">Completion metrics at a glance</div>
+            </div>
+
+            <div class="chart-body bars-body">
+              <div class="bar-row">
+                <div class="bar-label">Courses</div>
+                <div class="bar-container">
+                  <div class="bar-track">
+                    <div class="bar-fill courses" [style.width.%]="pctCourses() * 100">
+                      <span class="bar-inner-text" *ngIf="pctCourses() > 0.15">{{ (pctCourses() * 100) | number:'1.0-0' }}%</span>
+                    </div>
+                  </div>
+                  <div class="bar-value">{{ d.summary.coursesCompleted }}/{{ totalCourses() }}</div>
+                </div>
+              </div>
+
+              <div class="bar-row">
+                <div class="bar-label">Videos</div>
+                <div class="bar-container">
+                  <div class="bar-track">
+                    <div class="bar-fill videos" [style.width.%]="pctVideos() * 100">
+                      <span class="bar-inner-text" *ngIf="pctVideos() > 0.15">{{ (pctVideos() * 100) | number:'1.0-0' }}%</span>
+                    </div>
+                  </div>
+                  <div class="bar-value">{{ d.summary.videosWatched }}/{{ totalVideos() }}</div>
+                </div>
+              </div>
+
+              <div class="bar-row">
+                <div class="bar-label">Skills</div>
+                <div class="bar-container">
+                  <div class="bar-track">
+                    <div class="bar-fill skills" [style.width.%]="pctSkills() * 100">
+                      <span class="bar-inner-text" *ngIf="pctSkills() > 0.15">{{ (pctSkills() * 100) | number:'1.0-0' }}%</span>
+                    </div>
+                  </div>
+                  <div class="bar-value">{{ d.summary.skillsLearned }}/{{ totalSkills() }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BOTTOM-LEFT: Skill breakdown (diverging bars) -->
+          <div class="chart-card skill-card">
+            <div class="chart-header">
+              <div class="chart-title">🎯 Skills Analysis</div>
+              <div class="chart-subtitle">Completed vs Remaining courses per skill</div>
+            </div>
+
+            <div class="chart-body">
+              <div class="skill-bars" *ngIf="skillBreakdown().length > 0; else noSkillsTemplate">
+                <div class="skill-row" *ngFor="let s of skillBreakdown()">
+                  <div class="skill-name">{{ s.name }}</div>
+                  <div class="skill-diverging">
+                    <div class="skill-left">
+                      <div class="skill-completed-bar" [style.width.%]="(s.completed / maxSkillTotal()) * 100">
+                        <span class="skill-label" *ngIf="s.completed > 0">{{ s.completed }}</span>
+                      </div>
+                    </div>
+                    <div class="skill-divider">{{ s.completed }}/{{ s.total }}</div>
+                    <div class="skill-right">
+                      <div class="skill-remaining-bar" [style.width.%]="((s.total - s.completed) / maxSkillTotal()) * 100">
+                        <span class="skill-label" *ngIf="(s.total - s.completed) > 0">{{ s.total - s.completed }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <ng-template #noSkillsTemplate>
+                <div class="empty">No skill breakdown yet. Start a learning path.</div>
+              </ng-template>
+            </div>
+          </div>
+
+          <!-- BOTTOM-RIGHT: Gauge (speedometer) -->
+          <div class="chart-card gauge-card">
+            <div class="chart-header">
+              <div class="chart-title">⚡ Performance Gauge</div>
+              <div class="chart-subtitle">Overall learning velocity</div>
+            </div>
+
+            <div class="chart-body center">
+              <svg class="gauge" width="320" height="200" viewBox="0 0 320 200">
+                <defs>
+                  <linearGradient id="gaugeGrad" x1="0" x2="1" y1="0" y2="0">
+                    <stop offset="0%" stop-color="#06b6d4" />
+                    <stop offset="50%" stop-color="#667eea" />
+                    <stop offset="100%" stop-color="#a855f7" />
+                  </linearGradient>
+                  <filter id="gauge-glow">
+                    <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                    <feMerge>
+                      <feMergeNode in="coloredBlur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                </defs>
+
+                <path class="gauge-bg" d="M 40 170 A 120 120 0 0 1 280 170" />
+                <path class="gauge-fg" [attr.d]="gaugeArcPath()" filter="url(#gauge-glow)" />
+
+                <g class="gauge-ticks">
+                  <line x1="40" y1="170" x2="50" y2="170" />
+                  <line x1="100" y1="75" x2="108" y2="82" />
+                  <line x1="160" y1="50" x2="160" y2="60" />
+                  <line x1="220" y1="75" x2="212" y2="82" />
+                  <line x1="280" y1="170" x2="270" y2="170" />
+                </g>
+
+                <g [attr.transform]="'translate(160,170) rotate(' + gaugeAngleDeg() + ')'">
+                  <line x1="0" y1="0" x2="100" y2="0" class="needle" />
+                  <circle cx="0" cy="0" r="8" class="needle-cap" />
+                </g>
+
+                <text x="160" y="110" text-anchor="middle" class="gauge-pct">
+                  {{ (overallPct() * 100) | number:'1.0-0' }}%
+                </text>
+                <text x="160" y="135" text-anchor="middle" class="gauge-label">Overall Score</text>
+              </svg>
+
+              <div class="gauge-meta">
+                <div class="meta">Courses: {{ d.summary.coursesCompleted }}/{{ totalCourses() }}</div>
+                <div class="meta">Videos: {{ d.summary.videosWatched }}/{{ totalVideos() }}</div>
+                <div class="meta">Skills: {{ d.summary.skillsLearned }}/{{ totalSkills() }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="graph-details">
+          <div class="details-card" *ngIf="selectedNode() as s; else noSelection">
+            <div class="details-title">Details</div>
+            <div class="details-row"><span class="k">Label</span><span class="v">{{ s.label }}</span></div>
+            <div class="details-row"><span class="k">Type</span><span class="v">{{ s.type }}</span></div>
+            <div class="details-row" *ngIf="s.type === 'metric' && s.value != null"><span class="k">Value</span><span class="v">{{ s.value }}</span></div>
+
+            <ng-container *ngIf="s.type === 'course'">
+              <div class="details-row" *ngIf="s.completionPercentage != null"><span class="k">Completion</span><span class="v">{{ s.completionPercentage }}%</span></div>
+              <div class="details-row" *ngIf="s.watchedVideos != null && s.totalVideos != null"><span class="k">Videos</span><span class="v">{{ s.watchedVideos }}/{{ s.totalVideos }}</span></div>
+              <div class="details-row" *ngIf="s.completed != null"><span class="k">Completed</span><span class="v">{{ s.completed ? 'Yes' : 'No' }}</span></div>
+            </ng-container>
+
+            <ng-container *ngIf="s.type === 'skill'">
+              <div class="details-row" *ngIf="s.completed != null"><span class="k">Completed</span><span class="v">{{ s.completed ? 'Yes' : 'No' }}</span></div>
+            </ng-container>
+          </div>
+
+          <ng-template #noSelection>
+            <div class="details-card">
+              <div class="details-title">Details</div>
+              <div class="details-empty">Select a node to see details.</div>
+            </div>
+          </ng-template>
+        </aside>
+      </div>
+    </section>
+  </main>
+</div>

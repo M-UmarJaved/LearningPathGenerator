@@ -3,6 +3,7 @@ using PersonalizedLearningPath.Data;
 using PersonalizedLearningPath.Services.AuthService;
 using PersonalizedLearningPath.Services.ConceptDependencyGraph;
 using PersonalizedLearningPath.Services.LearningPathEngine;
+using PersonalizedLearningPath.Services.ProgressGraph;
 using PersonalizedLearningPath.Services.Seeding;
 using PersonalizedLearningPath.Services.SkillAssessment;
 
@@ -30,6 +31,7 @@ namespace PersonalizedLearningPath
             builder.Services.AddScoped<IConceptDependencyService, ConceptDependencyService>();
             builder.Services.AddScoped<ILearningPathService, LearningPathService>();
             builder.Services.AddScoped<IProgressService, ProgressService>();
+            builder.Services.AddScoped<IProgressGraphService, ProgressGraphService>();
             builder.Services.AddScoped<DashboardSeeder>();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
