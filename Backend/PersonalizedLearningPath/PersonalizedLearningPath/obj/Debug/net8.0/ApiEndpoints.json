@@ -17,6 +17,38 @@
   },
   {
     "ContainingType": "PersonalizedLearningPath.API.Controllers.AuthController",
+    "Method": "ConfirmPasswordReset",
+    "RelativePath": "api/auth/password-reset/confirm",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PersonalizedLearningPath.DTOs.ResetPasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalizedLearningPath.API.Controllers.AuthController",
+    "Method": "RequestPasswordReset",
+    "RelativePath": "api/auth/password-reset/request",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PersonalizedLearningPath.DTOs.ForgotPasswordRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalizedLearningPath.API.Controllers.AuthController",
     "Method": "Register",
     "RelativePath": "api/auth/register",
     "HttpMethod": "POST",
@@ -208,6 +240,22 @@
         "Name": "dto",
         "Type": "PersonalizedLearningPath.DTOs.LearningPath.GenerateLearningPathRequestDto",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalizedLearningPath.Controllers.ProgressGraphController",
+    "Method": "Get",
+    "RelativePath": "api/progress-graph",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

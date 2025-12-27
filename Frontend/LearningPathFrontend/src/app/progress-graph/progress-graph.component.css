@@ -1,0 +1,549 @@
+/* Uses dashboard.component.css for layout/theme; this file only adds graph-specific styles */
+
+.graph-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.graph-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.graph-stat {
+  background: rgba(30, 30, 50, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.graph-stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-size: 1.25rem;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.18), rgba(168, 85, 247, 0.12));
+  border: 1px solid rgba(102, 126, 234, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.graph-stat-icon.courses-icon {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.3));
+  border: 1px solid rgba(102, 126, 234, 0.35);
+}
+
+.graph-stat-icon.videos-icon {
+  background: linear-gradient(135deg, rgba(240, 147, 251, 0.3), rgba(245, 87, 108, 0.3));
+  border: 1px solid rgba(240, 147, 251, 0.35);
+}
+
+.graph-stat-icon.skills-icon {
+  background: linear-gradient(135deg, rgba(79, 172, 254, 0.3), rgba(0, 242, 254, 0.3));
+  border: 1px solid rgba(79, 172, 254, 0.35);
+}
+
+.graph-stat:hover .graph-stat-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.graph-stat-value {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #f8fafc;
+}
+
+.graph-stat-label {
+  color: rgba(255, 255, 255, 0.62);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.graph-state {
+  padding: 1rem 1.25rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(30, 30, 50, 0.55);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.graph-state.error {
+  border-color: rgba(239, 68, 68, 0.35);
+  background: rgba(239, 68, 68, 0.08);
+  color: #fca5a5;
+}
+
+.graph-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.graph-charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.chart-card {
+  background: rgba(30, 30, 50, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chart-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(102, 126, 234, 0.3);
+}
+
+.chart-header {
+  padding: 1rem 1.1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(26, 26, 46, 0.55);
+}
+
+.chart-title {
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.chart-subtitle {
+  margin-top: 0.25rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.chart-body {
+  padding: 1rem 1.1rem;
+}
+
+.chart-body.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+
+/* ===== Charts (radial + bars + gauge) ===== */
+
+.radial .ring-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.10);
+  stroke-width: 14;
+}
+
+.radial .ring {
+  fill: none;
+  stroke-width: 14;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 400ms ease;
+}
+
+.radial .ring-courses {
+  stroke: url(#ringCourses);
+}
+
+.radial .ring-videos {
+  stroke: url(#ringVideos);
+}
+
+.radial .ring-skills {
+  stroke: url(#ringSkills);
+}
+
+.radial-center .radial-pct {
+  fill: rgba(255, 255, 255, 0.92);
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.radial-center .radial-label {
+  fill: rgba(255, 255, 255, 0.62);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.radial-legend {
+  display: grid;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 320px;
+}
+
+.radial-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 700;
+}
+
+.swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.swatch.courses { background: var(--primary); }
+.swatch.videos { background: var(--accent-cyan); }
+.swatch.skills { background: var(--accent-violet); }
+
+/* Horizontal bars */
+.bars-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 0.5rem 0;
+}
+
+.bar-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bar-label {
+  color: rgba(255, 255, 255, 0.80);
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.bar-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.bar-track {
+  flex: 1;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 8px;
+  transition: width 1s ease-out;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+.bar-fill.courses {
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  box-shadow: 0 0 12px rgba(102, 126, 234, 0.5);
+}
+
+.bar-fill.videos {
+  background: linear-gradient(90deg, #f093fb, #f5576c);
+  box-shadow: 0 0 12px rgba(240, 147, 251, 0.5);
+}
+
+.bar-fill.skills {
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  box-shadow: 0 0 12px rgba(79, 172, 254, 0.5);
+}
+
+.bar-inner-text {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.bar-value {
+  min-width: 70px;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 900;
+  font-size: 0.85rem;
+}
+
+/* Skill breakdown - diverging bars */
+.skill-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+
+.skill-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skill-name {
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 800;
+  font-size: 0.85rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.skill-diverging {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.skill-left,
+.skill-right {
+  flex: 1;
+  height: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.skill-left {
+  justify-content: flex-end;
+}
+
+.skill-right {
+  justify-content: flex-start;
+}
+
+.skill-completed-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #f093fb, #f5576c);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 1s ease-out;
+  box-shadow: 0 0 10px rgba(240, 147, 251, 0.5);
+}
+
+.skill-remaining-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 1s ease-out;
+  box-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+}
+
+.skill-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.skill-divider {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.7);
+  min-width: 55px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.empty {
+  color: rgba(255, 255, 255, 0.62);
+  font-weight: 700;
+}
+
+/* Gauge */
+.gauge .gauge-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 20;
+  stroke-linecap: round;
+}
+
+.gauge .gauge-fg {
+  fill: none;
+  stroke: url(#gaugeGrad);
+  stroke-width: 20;
+  stroke-linecap: round;
+  transition: d 1s ease-out;
+}
+
+.gauge-ticks line {
+  stroke: rgba(255, 255, 255, 0.35);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.needle {
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: transform 1s ease-out;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+}
+
+.needle-cap {
+  fill: #ffffff;
+  stroke: rgba(102, 126, 234, 0.6);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 8px rgba(102, 126, 234, 0.7));
+}
+
+.gauge-pct {
+  fill: rgba(255, 255, 255, 0.92);
+  font-size: 28px;
+  font-weight: 900;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5))ar-gradient(90deg, var(--accent-emerald), var(--primary));
+  transition: width 400ms ease;
+}
+
+.skill-value {
+  text-align: right;
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 900;
+}
+
+.empty {
+  color: rgba(255, 255, 255, 0.62);
+  font-weight: 700;
+}
+
+/* Gauge */
+.gauge .gauge-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.12);
+  stroke-width: 18;
+  stroke-linecap: round;
+}
+
+.gauge .gauge-fg {
+  fill: none;
+  stroke: url(#gaugeGrad);
+  stroke-width: 18;
+  stroke-linecap: round;
+}
+
+.needle {
+  stroke: rgba(255, 255, 255, 0.75);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.needle-cap {
+  fill: rgba(255, 255, 255, 0.85);
+}
+
+.gauge-pct {
+  fill: rgba(255, 255, 255, 0.92);
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.gauge-label {
+  fill: rgba(255, 255, 255, 0.62);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.gauge-meta {
+  display: grid;
+  gap: 0.35rem;
+  width: 100%;
+  max-width: 360px;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.74);
+  font-weight: 700;
+}
+
+.graph-details {
+  position: sticky;
+  top: 1rem;
+}
+
+.details-card {
+  background: rgba(30, 30, 50, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.details-title {
+  font-weight: 900;
+  margin-bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.details-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.details-row:last-child {
+  border-bottom: 0;
+}
+
+.details-row .k {
+  color: rgba(255, 255, 255, 0.60);
+  font-weight: 700;
+}
+
+.details-row .v {
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 800;
+  text-align: right;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.details-empty {
+  color: rgba(255, 255, 255, 0.62);
+  font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+  .graph-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .graph-charts {
+    grid-template-columns: 1fr;
+  }
+
+  .graph-details {
+    position: static;
+  }
+}
+
+@media (max-width: 900px) {
+  .graph-summary {
+    grid-template-columns: 1fr;
+  }
+}

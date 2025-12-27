@@ -111,3 +111,4 @@ D:\University\CS 2024-2028\3rd Semester\DSA Lab\FinalProject\Backend\Personalize
 D:\University\CS 2024-2028\3rd Semester\DSA Lab\FinalProject\Backend\PersonalizedLearningPath\PersonalizedLearningPath\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\University\CS 2024-2028\3rd Semester\DSA Lab\FinalProject\Backend\PersonalizedLearningPath\PersonalizedLearningPath\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\University\CS 2024-2028\3rd Semester\DSA Lab\FinalProject\Backend\PersonalizedLearningPath\PersonalizedLearningPath\obj\Debug\net8.0\PersonalizedLearningPath.sourcelink.json
+D:\University\CS 2024-2028\3rd Semester\DSA Lab\FinalProject\Backend\PersonalizedLearningPath\PersonalizedLearningPath\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
