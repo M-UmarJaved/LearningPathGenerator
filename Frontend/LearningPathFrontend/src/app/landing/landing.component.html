@@ -1,0 +1,377 @@
+<app-navbar></app-navbar>
+
+<div class="landing-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-star"></i> AI-Powered Learning Platform</div>
+        <h1 class="hero-title">
+          Master New Skills with
+          <span class="gradient-text">Personalized Learning Paths</span>
+        </h1>
+        <p class="hero-description">
+          Experience intelligent skill assessments, customized course recommendations, 
+          and adaptive learning paths tailored just for you. Start your journey today.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-primary" [routerLink]="['/register']" [queryParams]="{ fromLanding: 1 }">Get Started Free</button>
+          <button class="btn-outline" routerLink="/features">Explore Features</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">10K+</div>
+            <div class="stat-label">Active Learners</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Courses</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">95%</div>
+            <div class="stat-label">Success Rate</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-card card-1">
+          <div class="card-icon"><i class="fas fa-chart-bar"></i></div>
+          <div class="card-content">
+            <div class="card-title">Skill Assessment</div>
+            <div class="card-desc">AI-powered evaluation</div>
+          </div>
+        </div>
+        <div class="floating-card card-2">
+          <div class="card-icon"><i class="fas fa-route"></i></div>
+          <div class="card-content">
+            <div class="card-title">Learning Path</div>
+            <div class="card-desc">Customized roadmap</div>
+          </div>
+        </div>
+        <div class="floating-card card-3">
+          <div class="card-icon"><i class="fas fa-trophy"></i></div>
+          <div class="card-content">
+            <div class="card-title">Track Progress</div>
+            <div class="card-desc">Real-time analytics</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Preview Section -->
+  <section class="features-preview">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title">Why Choose LearnPath?</h2>
+        <p class="section-description">
+          Intelligent features designed to accelerate your learning journey
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-bullseye"></i></div>
+          <h3 class="feature-title">Personalized Assessments</h3>
+          <p class="feature-desc">
+            Take intelligent skill assessments that adapt to your knowledge level
+            and identify areas for improvement.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-brain"></i></div>
+          <h3 class="feature-title">AI-Powered Paths</h3>
+          <p class="feature-desc">
+            Get customized learning paths built using advanced graph algorithms
+            and dependency analysis.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+          <h3 class="feature-title">Progress Tracking</h3>
+          <p class="feature-desc">
+            Monitor your learning journey with detailed analytics and
+            visualize your skill development.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h3 class="feature-title">Quality Content</h3>
+          <p class="feature-desc">
+            Access curated courses and video content from industry experts
+            across various domains.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+          <h3 class="feature-title">Adaptive Learning</h3>
+          <p class="feature-desc">
+            Experience content that adapts to your pace and learning style
+            for optimal knowledge retention.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
+          <h3 class="feature-title">Continuous Improvement</h3>
+          <p class="feature-desc">
+            Retake assessments, update your learning paths, and evolve your
+            skills continuously.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-description">
+          Your personalized learning journey in three simple steps
+        </p>
+      </div>
+
+      <div class="steps-container">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <div class="step-icon"><i class="fas fa-clipboard-check"></i></div>
+          <h3 class="step-title">Take Assessment</h3>
+          <p class="step-desc">
+            Complete our intelligent skill assessment to evaluate your current knowledge level across different domains.
+          </p>
+        </div>
+
+        <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <div class="step-icon"><i class="fas fa-project-diagram"></i></div>
+          <h3 class="step-title">Get Your Path</h3>
+          <p class="step-desc">
+            Receive a customized learning roadmap built with AI and graph algorithms tailored to your skill gaps.
+          </p>
+        </div>
+
+        <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <div class="step-icon"><i class="fas fa-rocket"></i></div>
+          <h3 class="step-title">Start Learning</h3>
+          <p class="step-desc">
+            Follow your personalized path, track progress, and achieve your learning goals with guided content.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platform Highlights Section -->
+  <section class="platform-highlights">
+    <div class="section-container">
+      <div class="highlights-grid">
+        <div class="highlight-item">
+          <div class="highlight-visual">
+            <i class="fas fa-code highlight-icon"></i>
+          </div>
+          <div class="highlight-content">
+            <h3 class="highlight-title">Built with Advanced DSA</h3>
+            <p class="highlight-desc">
+              Our platform leverages custom-built data structures including graphs, hash tables, 
+              trees, and queues to deliver optimal learning path recommendations and real-time progress tracking.
+            </p>
+            <ul class="highlight-features">
+              <li><i class="fas fa-check-circle"></i> Graph-based dependency resolution</li>
+              <li><i class="fas fa-check-circle"></i> Efficient sorting algorithms</li>
+              <li><i class="fas fa-check-circle"></i> Optimized search operations</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="highlight-item reverse">
+          <div class="highlight-visual">
+            <i class="fas fa-chart-line highlight-icon"></i>
+          </div>
+          <div class="highlight-content">
+            <h3 class="highlight-title">Smart Analytics Dashboard</h3>
+            <p class="highlight-desc">
+              Get comprehensive insights into your learning journey with interactive visualizations, 
+              progress graphs, and detailed performance metrics.
+            </p>
+            <ul class="highlight-features">
+              <li><i class="fas fa-check-circle"></i> Real-time progress visualization</li>
+              <li><i class="fas fa-check-circle"></i> Course completion tracking</li>
+              <li><i class="fas fa-check-circle"></i> Skill mastery indicators</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-visual">
+            <i class="fas fa-calendar-alt highlight-icon"></i>
+          </div>
+          <div class="highlight-content">
+            <h3 class="highlight-title">Study Plan Management</h3>
+            <p class="highlight-desc">
+              Organize your learning schedule with our integrated study planner. Set goals, 
+              schedule sessions, and stay on track with personalized reminders.
+            </p>
+            <ul class="highlight-features">
+              <li><i class="fas fa-check-circle"></i> Calendar-based planning</li>
+              <li><i class="fas fa-check-circle"></i> Goal setting & tracking</li>
+              <li><i class="fas fa-check-circle"></i> Event categorization</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title">What Learners Say</h2>
+        <p class="section-description">
+          Hear from those who transformed their careers with personalized learning
+        </p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p class="testimonial-text">
+            "The personalized learning path helped me identify exactly what I needed to learn. 
+            The adaptive assessments were spot-on, and I progressed faster than I ever thought possible!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            <div class="author-info">
+              <div class="author-name">Sarah Johnson</div>
+              <div class="author-role">Software Developer</div>
+            </div>
+          </div>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p class="testimonial-text">
+            "As someone switching careers, this platform was a game-changer. The structured approach 
+            and progress tracking kept me motivated throughout my learning journey."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <div class="author-info">
+              <div class="author-name">Michael Chen</div>
+              <div class="author-role">Data Analyst</div>
+            </div>
+          </div>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p class="testimonial-text">
+            "The AI-powered recommendations are incredibly accurate. I love how the platform adapts to 
+            my learning pace and suggests the perfect next step every time."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <i class="fas fa-user-astronaut"></i>
+            </div>
+            <div class="author-info">
+              <div class="author-name">Emily Rodriguez</div>
+              <div class="author-role">UX Designer</div>
+            </div>
+          </div>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats & Achievements Section -->
+  <section class="stats-achievements">
+    <div class="section-container">
+      <div class="achievements-grid">
+        <div class="achievement-card">
+          <div class="achievement-icon"><i class="fas fa-users"></i></div>
+          <div class="achievement-number">10,000+</div>
+          <div class="achievement-label">Active Learners</div>
+          <p class="achievement-desc">Join our growing community of successful learners</p>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-icon"><i class="fas fa-book-open"></i></div>
+          <div class="achievement-number">500+</div>
+          <div class="achievement-label">Quality Courses</div>
+          <p class="achievement-desc">Curated content across multiple domains</p>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
+          <div class="achievement-number">95%</div>
+          <div class="achievement-label">Success Rate</div>
+          <p class="achievement-desc">Learners achieve their learning goals</p>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-icon"><i class="fas fa-clock"></i></div>
+          <div class="achievement-number">100K+</div>
+          <div class="achievement-label">Hours Learned</div>
+          <p class="achievement-desc">Total learning time by our community</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <div class="cta-content">
+        <h2 class="cta-title">Ready to Start Your Learning Journey?</h2>
+        <p class="cta-description">
+          Join thousands of learners who are mastering new skills every day
+        </p>
+        <button class="btn-primary-large" [routerLink]="['/register']" [queryParams]="{ fromLanding: 1 }">
+          Get Started Now
+          <span class="btn-arrow">→</span>
+        </button>
+        <div class="cta-trust">
+          <p><i class="fas fa-shield-alt"></i> No credit card required • Free forever • Cancel anytime</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<app-footer></app-footer>

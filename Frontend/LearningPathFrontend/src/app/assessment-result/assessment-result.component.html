@@ -1,0 +1,40 @@
+<div class="page">
+	<div class="card">
+		<div class="header">
+			<div>
+				<h2>Assessment Result</h2>
+				<p class="sub" *ngIf="userName">Welcome, {{ userName }}</p>
+			</div>
+			<div class="actions">
+				<button class="btn btn-primary" (click)="continueToDashboard()">Continue To Dashboard</button>
+			</div>
+		</div>
+
+		<div class="empty" *ngIf="!hasResults">
+			<p>No assessment results yet.</p>
+			<button class="btn btn-primary" (click)="startNew()">Select Skills</button>
+		</div>
+
+		<div class="table" *ngIf="hasResults">
+			<div class="row header-row">
+				<div>Skill</div>
+				<div>Level</div>
+				<div>Score</div>
+				<div>Accuracy</div>
+			</div>
+
+			<div class="row" *ngFor="let r of results">
+				<div class="skill">{{ r.skillName }}</div>
+				<div class="level" 
+					 [style.color]="getLevelColor(r.skillLevel)">
+					{{ r.skillLevel }}
+				</div>
+				<div class="score">{{ r.correctAnswers }}/{{ r.totalAnswered }}</div>
+				<div class="acc" 
+					 [style.color]="getAccuracyColor((r.correctAnswers / r.totalAnswered) * 100)">
+					{{ ((r.correctAnswers / r.totalAnswered) * 100).toFixed(0) }}%
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,38 @@
+<section class="section">
+  <div class="section-header">
+    <h2 class="section-title">DSA Usage (Backend)</h2>
+  </div>
+
+  <div class="dsa-card">
+    <p class="dsa-subtitle">
+      This table explains which Data Structures & Algorithms are implemented in the backend and what they do inside the application.
+    </p>
+
+    <div class="dsa-table-wrap">
+      <table class="dsa-table">
+        <colgroup>
+          <col style="width: 18%" />
+          <col style="width: 20%" />
+          <col style="width: 30%" />
+          <col style="width: 32%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>DSA Structure</th>
+            <th>Backend Files</th>
+            <th>Where It Is Used</th>
+            <th>What It Performs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let r of rows">
+            <td class="dsa-strong">{{ r.structure }}</td>
+            <td>{{ r.backendFiles }}</td>
+            <td>{{ r.whereUsed }}</td>
+            <td>{{ r.purpose }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

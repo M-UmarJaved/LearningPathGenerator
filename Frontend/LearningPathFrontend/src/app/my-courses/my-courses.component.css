@@ -1,0 +1,118 @@
+/* Embedded inside Dashboard: match dashboard palette/cards */
+
+.my-courses {
+  width: 100%;
+}
+
+.skills {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.skill-section {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.skill-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0.85rem 1.1rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.skill-title {
+  color: #f8fafc;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+}
+
+.skill-subtitle {
+  color: #94a3b8;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.status {
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+}
+
+.status.error {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #f87171;
+}
+
+.empty {
+  color: #cbd5e1;
+  padding: 1rem;
+  text-align: center;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.course-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.25rem;
+  background: rgba(30, 30, 50, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(102, 126, 234, 0.35);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.28),
+    0 0 35px rgba(102, 126, 234, 0.12);
+}
+
+.course-title {
+  font-weight: 800;
+  color: #f8fafc;
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.course-meta {
+  color: #94a3b8;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 0.15rem;
+}
+
+.resume-btn {
+  height: 44px;
+  padding: 0 1.1rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.25);
+  transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.35);
+}

@@ -1,0 +1,32 @@
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using PersonalizedLearningPath.DTOs.SkillAssessment;
+using PersonalizedLearningPath.Services.SkillAssessment;
+
+namespace PersonalizedLearningPath.Controllers
+{
+    [ApiController]
+    [Route("api/skill-assessment")]
+    public class SkillAssessmentController : ControllerBase
+    {
+        private readonly SkillAssessmentService _service;
+
+        public SkillAssessmentController(SkillAssessmentService service)
+        {
+            _service = service;
+        }
+
+        [HttpGet("start/{skillId}")]
+        public IActionResult Start(int skillId)
+        {
+            return Ok(_service.StartAssessment(skillId));
+        }
+
+        [HttpPost("answer")]
+        public IActionResult Answer([FromBody] AnswerDto dto)
+        {
+            return Ok(_service.SubmitAnswer(dto));
+        }
+    }
+
+}

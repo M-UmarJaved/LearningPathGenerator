@@ -1,0 +1,86 @@
+<div class="assessment-wrapper">
+  <!-- Assessment Card -->
+  <div class="assessment-card" *ngIf="!assessmentCompleted && question">
+    <!-- Header with Progress -->
+    <div class="card-header">
+      <div class="progress-info">
+        <span class="question-badge">{{ skillName }}</span>
+        <span class="question-badge">Question {{ totalAnswered + 1 }}</span>
+        <span class="score-badge">Score: {{ correctCount }}/{{ totalAnswered }}</span>
+      </div>
+    </div>
+
+    <!-- Question -->
+    <div class="question-section">
+      <h2 class="question-text">{{ question.questionText }}</h2>
+    </div>
+
+    <!-- Options -->
+    <div class="options-section">
+      <label class="option-card" [class.selected]="selectedOption === 'A'">
+        <input type="radio" [name]="'option-' + question.questionId" [value]="'A'"
+               [(ngModel)]="selectedOption">
+        <span class="option-indicator">A</span>
+        <span class="option-text">{{ question.choiceA }}</span>
+        <span class="checkmark"></span>
+      </label>
+
+      <label class="option-card" [class.selected]="selectedOption === 'B'">
+        <input type="radio" [name]="'option-' + question.questionId" [value]="'B'"
+               [(ngModel)]="selectedOption">
+        <span class="option-indicator">B</span>
+        <span class="option-text">{{ question.choiceB }}</span>
+        <span class="checkmark"></span>
+      </label>
+
+      <label class="option-card" [class.selected]="selectedOption === 'C'">
+        <input type="radio" [name]="'option-' + question.questionId" [value]="'C'"
+               [(ngModel)]="selectedOption">
+        <span class="option-indicator">C</span>
+        <span class="option-text">{{ question.choiceC }}</span>
+        <span class="checkmark"></span>
+      </label>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="action-section">
+      <button class="submit-btn" (click)="isFinalQuestion ? submitFinal() : submitAnswer()" [disabled]="!selectedOption">
+        <span>{{ isFinalQuestion ? 'Submit Assessment' : 'Submit Answer' }}</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M4 10h12m-6-6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Result Card -->
+  <div class="result-card" *ngIf="assessmentCompleted">
+    <div class="result-icon">
+      <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+        <circle cx="40" cy="40" r="38" stroke="#10b981" stroke-width="4" fill="none"/>
+        <path d="M25 40l10 10 20-20" stroke="#10b981" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h2 class="result-title">Assessment Completed!</h2>
+    <div class="result-details">
+      <div class="result-stat">
+        <span class="stat-label">Skill Level</span>
+        <span class="stat-value skill-level">{{ finalSkillLevel }}</span>
+      </div>
+      <div class="result-stat">
+        <span class="stat-label">Final Score</span>
+        <span class="stat-value score">{{ correctCount }}/{{ totalAnswered }}</span>
+      </div>
+      <div class="result-stat">
+        <span class="stat-label">Accuracy</span>
+        <span class="stat-value accuracy">{{ ((correctCount / totalAnswered) * 100).toFixed(0) }}%</span>
+      </div>
+    </div>
+    <button class="restart-btn" (click)="restartAssessment()">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M4 10a6 6 0 0112 0M4 10V4m0 6H10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Start New Assessment</span>
+    </button>
+  </div>
+</div>

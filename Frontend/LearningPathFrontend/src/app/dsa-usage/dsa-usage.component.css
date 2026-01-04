@@ -1,0 +1,63 @@
+/* Reuses dashboard theme; this file only styles the table area */
+
+.dsa-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background: rgba(30, 30, 50, 0.45);
+  padding: 1.25rem;
+}
+
+.dsa-subtitle {
+  margin: 0 0 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}
+
+.dsa-table-wrap {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dsa-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.dsa-table th,
+.dsa-table td {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.dsa-table thead th {
+  word-break: normal;
+}
+
+.dsa-table thead th {
+  text-align: left;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(20, 20, 40, 0.6);
+  padding: 0.9rem 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dsa-table tbody td {
+  padding: 0.9rem 0.9rem;
+  color: rgba(255, 255, 255, 0.82);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  vertical-align: top;
+}
+
+.dsa-table tbody tr:hover td {
+  background: rgba(102, 126, 234, 0.08);
+}
+
+.dsa-strong {
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.92);
+}

@@ -1,0 +1,29 @@
+<div class="my-courses">
+  <div *ngIf="loading" class="status">Loading...</div>
+  <div *ngIf="error" class="status error">{{ error }}</div>
+
+  <div *ngIf="!loading && !error && skillSections.length === 0" class="empty">
+    No in-progress courses found.
+  </div>
+
+  <div class="skills" *ngIf="!loading && !error && skillSections.length > 0">
+    <div class="skill-section" *ngFor="let s of skillSections">
+      <div class="skill-header">
+        <div class="skill-title">{{ s.skillName }}</div>
+        <div class="skill-subtitle">{{ s.courses.length }} course(s)</div>
+      </div>
+
+      <div class="courses-grid">
+        <div class="course-card" *ngFor="let c of s.courses">
+          <div class="course-body">
+            <div class="course-title">{{ c.courseTitle }}</div>
+            <div class="course-meta">{{ c.courseLevel }} • {{ c.completionPercentage }}% complete</div>
+            <div class="course-meta">Resume: video {{ c.lastVideoIndex }} at {{ c.lastPositionSeconds }}s</div>
+          </div>
+
+          <button type="button" class="resume-btn" (click)="resume(c)">Resume</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,104 @@
+<!-- Modal Backdrop -->
+<div class="modal-backdrop" (click)="close()" [@fadeIn]></div>
+
+<!-- Profile Modal -->
+<div class="profile-modal" [@slideIn]>
+  <div class="modal-content" *ngIf="!loading && !!profile; else loadingOrError">
+    <!-- Header with Close Button -->
+    <div class="modal-header">
+      <div class="header-left">
+        <div class="avatar-large">{{ profile!.fullName.charAt(0).toUpperCase() }}</div>
+        <div class="user-info">
+          <h2>{{ profile!.fullName }}</h2>
+          <p class="user-email"><i class="fas fa-envelope"></i> {{ profile!.email }}</p>
+        </div>
+      </div>
+      <button class="close-btn" (click)="close()" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="stats-section">
+      <h3 class="section-title">Learning Progress</h3>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+            <i class="fas fa-route"></i>
+          </div>
+          <div class="stat-details">
+            <div class="stat-value">{{ profile!.learningPaths }}</div>
+            <div class="stat-label">Learning Paths</div>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+            <i class="fas fa-brain"></i>
+          </div>
+          <div class="stat-details">
+            <div class="stat-value">{{ profile!.skillsAssessed }}</div>
+            <div class="stat-label">Skills Assessed</div>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <div class="stat-details">
+            <div class="stat-value">{{ profile!.coursesInPaths }}</div>
+            <div class="stat-label">Courses in Paths</div>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <div class="stat-details">
+            <div class="stat-value">{{ profile!.completedCourses }}</div>
+            <div class="stat-label">Completed Courses</div>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+            <i class="fas fa-play-circle"></i>
+          </div>
+          <div class="stat-details">
+            <div class="stat-value">{{ profile!.videosWatched }}</div>
+            <div class="stat-label">Videos Watched</div>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div class="stat-details">
+            <div class="stat-value">{{ profile!.hoursLearned }}</div>
+            <div class="stat-label">Hours Learned</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #loadingOrError>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>My Profile</h2>
+        <button class="close-btn" (click)="close()" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div *ngIf="loading" class="loading">
+        <i class="fas fa-spinner fa-spin"></i> Loading profile…
+      </div>
+      <div *ngIf="!loading && error" class="error">
+        <i class="fas fa-exclamation-circle"></i> {{ error }}
+      </div>
+    </div>
+  </ng-template>
+</div>

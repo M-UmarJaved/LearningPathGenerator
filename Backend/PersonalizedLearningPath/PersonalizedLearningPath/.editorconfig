@@ -1,0 +1,9 @@
+root = true
+
+# Keep standard formatting diagnostics for the real project code.
+[*.cs]
+dotnet_diagnostic.IDE0055.severity = warning
+
+# DSA Sample Structures are kept unmodified (reference-only). Suppress formatting diagnostics there.
+[DSA Sample Structures/*.cs]
+dotnet_diagnostic.IDE0055.severity = none

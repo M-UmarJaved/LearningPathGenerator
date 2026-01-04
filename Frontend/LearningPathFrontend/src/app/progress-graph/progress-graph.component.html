@@ -1,0 +1,239 @@
+<ng-template #graphContent>
+  <section class="graph-page">
+      <div class="graph-summary" *ngIf="data() as d">
+        <div class="graph-stat">
+          <div class="graph-stat-icon courses-icon"><i class="fas fa-book"></i></div>
+          <div class="graph-stat-info">
+            <div class="graph-stat-value">{{ d.summary?.coursesCompleted ?? 0 }}</div>
+            <div class="graph-stat-label">Courses Completed</div>
+          </div>
+        </div>
+
+        <div class="graph-stat">
+          <div class="graph-stat-icon videos-icon"><i class="fas fa-video"></i></div>
+          <div class="graph-stat-info">
+            <div class="graph-stat-value">{{ d.summary?.videosWatched ?? 0 }}</div>
+            <div class="graph-stat-label">Videos Watched</div>
+          </div>
+        </div>
+
+        <div class="graph-stat">
+          <div class="graph-stat-icon skills-icon"><i class="fas fa-star"></i></div>
+          <div class="graph-stat-info">
+            <div class="graph-stat-value">{{ d.summary?.skillsLearned ?? 0 }}</div>
+            <div class="graph-stat-label">Skills Mastered</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="graph-state" *ngIf="loading()">
+        Loading your progress graph...
+      </div>
+
+      <div class="graph-state error" *ngIf="error() as e">
+        {{ e }}
+      </div>
+
+      <div class="graph-state" *ngIf="!loading() && !error() && !data()">
+        No progress data to display yet.
+      </div>
+
+      <div class="graph-layout" *ngIf="data() as d">
+        <div class="graph-charts">
+          <!-- TOP-LEFT: Overall progress (bar) -->
+          <div class="chart-card bars-card">
+            <div class="chart-header">
+              <div class="chart-title"><i class="fas fa-chart-bar"></i> Overall Progress</div>
+              <div class="chart-subtitle">Single bar view of overall completion</div>
+            </div>
+
+            <div class="chart-body bars-body">
+              <div class="bar-row">
+                <div class="bar-label">Overall Completion</div>
+                <div class="bar-container">
+                  <div class="bar-track">
+                    <div class="bar-fill courses" [style.width.%]="overallPct() * 100">
+                      <span class="bar-inner-text" *ngIf="overallPct() > 0.15">{{ (overallPct() * 100) | number:'1.0-0' }}%</span>
+                    </div>
+                  </div>
+                  <div class="bar-value">{{ (overallPct() * 100) | number:'1.0-0' }}%</div>
+                </div>
+              </div>
+
+              <div class="bar-row">
+                <div class="bar-label">Courses</div>
+                <div class="bar-container">
+                  <div class="bar-track">
+                    <div class="bar-fill courses" [style.width.%]="pctCourses() * 100">
+                      <span class="bar-inner-text" *ngIf="pctCourses() > 0.15">{{ (pctCourses() * 100) | number:'1.0-0' }}%</span>
+                    </div>
+                  </div>
+                  <div class="bar-value">{{ d.summary?.coursesCompleted ?? 0 }}/{{ totalCourses() }}</div>
+                </div>
+              </div>
+
+              <div class="bar-row">
+                <div class="bar-label">Videos</div>
+                <div class="bar-container">
+                  <div class="bar-track">
+                    <div class="bar-fill videos" [style.width.%]="pctVideos() * 100">
+                      <span class="bar-inner-text" *ngIf="pctVideos() > 0.15">{{ (pctVideos() * 100) | number:'1.0-0' }}%</span>
+                    </div>
+                  </div>
+                  <div class="bar-value">{{ d.summary?.videosWatched ?? 0 }}/{{ totalVideos() }}</div>
+                </div>
+              </div>
+
+              <div class="bar-row">
+                <div class="bar-label">Skills</div>
+                <div class="bar-container">
+                  <div class="bar-track">
+                    <div class="bar-fill skills" [style.width.%]="pctSkills() * 100">
+                      <span class="bar-inner-text" *ngIf="pctSkills() > 0.15">{{ (pctSkills() * 100) | number:'1.0-0' }}%</span>
+                    </div>
+                  </div>
+                  <div class="bar-value">{{ d.summary?.skillsLearned ?? 0 }}/{{ totalSkills() }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TOP-RIGHT: Horizontal bars -->
+          <div class="chart-card bars-card">
+            <div class="chart-header">
+              <div class="chart-title"><i class="fas fa-chart-bar"></i> Progress Breakdown</div>
+              <div class="chart-subtitle">Completion metrics at a glance</div>
+            </div>
+
+            <div class="chart-body bars-body">
+              <div class="bar-row">
+                <div class="bar-label">Courses Completed</div>
+                <div class="bar-container">
+                  <div class="bar-track">
+                    <div class="bar-fill courses" [style.width.%]="pctCourses() * 100">
+                      <span class="bar-inner-text" *ngIf="pctCourses() > 0.15">{{ (pctCourses() * 100) | number:'1.0-0' }}%</span>
+                    </div>
+                  </div>
+                  <div class="bar-value">{{ d.summary?.coursesCompleted ?? 0 }}/{{ totalCourses() }}</div>
+                </div>
+              </div>
+
+              <div class="bar-row">
+                <div class="bar-label">Videos Watched</div>
+                <div class="bar-container">
+                  <div class="bar-track">
+                    <div class="bar-fill videos" [style.width.%]="pctVideos() * 100">
+                      <span class="bar-inner-text" *ngIf="pctVideos() > 0.15">{{ (pctVideos() * 100) | number:'1.0-0' }}%</span>
+                    </div>
+                  </div>
+                  <div class="bar-value">{{ d.summary?.videosWatched ?? 0 }}/{{ totalVideos() }}</div>
+                </div>
+              </div>
+
+              <div class="bar-row">
+                <div class="bar-label">Skills Mastered</div>
+                <div class="bar-container">
+                  <div class="bar-track">
+                    <div class="bar-fill skills" [style.width.%]="pctSkills() * 100">
+                      <span class="bar-inner-text" *ngIf="pctSkills() > 0.15">{{ (pctSkills() * 100) | number:'1.0-0' }}%</span>
+                    </div>
+                  </div>
+                  <div class="bar-value">{{ d.summary?.skillsLearned ?? 0 }}/{{ totalSkills() }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BOTTOM-LEFT: Skill breakdown (diverging bars) -->
+          <div class="chart-card skill-card">
+            <div class="chart-header">
+              <div class="chart-title"><i class="fas fa-bullseye"></i> Skills Analysis</div>
+              <div class="chart-subtitle">Completed vs Remaining courses per skill</div>
+            </div>
+
+            <div class="chart-body">
+              <div class="skill-bars" *ngIf="skillBreakdown().length > 0; else noSkillsTemplate">
+                <div class="skill-row" *ngFor="let s of skillBreakdown()">
+                  <div class="skill-name">{{ s.name }}</div>
+                  <div class="skill-diverging">
+                    <div class="skill-left">
+                      <div class="skill-completed-bar" [style.width.%]="(s.completed / maxSkillTotal()) * 100">
+                        <span class="skill-label" *ngIf="s.completed > 0">{{ s.completed }}</span>
+                      </div>
+                    </div>
+                    <div class="skill-divider">{{ s.completed }}/{{ s.total }}</div>
+                    <div class="skill-right">
+                      <div class="skill-remaining-bar" [style.width.%]="((s.total - s.completed) / maxSkillTotal()) * 100">
+                        <span class="skill-label" *ngIf="(s.total - s.completed) > 0">{{ s.total - s.completed }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <ng-template #noSkillsTemplate>
+                <div class="empty">No skill breakdown yet. Start a learning path to see your progress here.</div>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</ng-template>
+
+<ng-container *ngIf="embedded; else fullPage">
+  <ng-container *ngTemplateOutlet="graphContent"></ng-container>
+</ng-container>
+
+<ng-template #fullPage>
+  <div class="dashboard-container">
+    <!-- SIDEBAR NAVIGATION -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <span class="logo-icon"><i class="fas fa-graduation-cap"></i></span>
+          <span class="logo-text">LearnPath</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a class="nav-item" (click)="goDashboard()">
+          <span class="nav-icon"><i class="fas fa-chart-pie"></i></span>
+          <span class="nav-text">Dashboard</span>
+        </a>
+        <a class="nav-item active">
+          <span class="nav-icon"><i class="fas fa-chart-line"></i></span>
+          <span class="nav-text">Progress Graph</span>
+        </a>
+        <a class="nav-item" (click)="goSkillAssessment()">
+          <span class="nav-icon"><i class="fas fa-tasks"></i></span>
+          <span class="nav-text">Skill Assessment</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="logout-btn" (click)="logout()">
+          <span class="nav-icon"><i class="fas fa-sign-out-alt"></i></span>
+          <span>Logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <header class="top-header">
+        <div class="header-left">
+          <h1 class="page-title">Progress Graph</h1>
+          <p class="page-subtitle">A visual view of your learning progress, {{ userName }}</p>
+        </div>
+
+        <div class="header-right">
+          <button class="start-learning-btn" (click)="load()">Refresh</button>
+          <div class="user-avatar">{{ userName.charAt(0).toUpperCase() }}</div>
+        </div>
+      </header>
+
+      <ng-container *ngTemplateOutlet="graphContent"></ng-container>
+    </main>
+  </div>
+</ng-template>

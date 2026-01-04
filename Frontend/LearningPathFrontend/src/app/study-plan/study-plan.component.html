@@ -1,0 +1,127 @@
+<div class="study-plan">
+  <div class="sp-header">
+    <div>
+      <h2>Calendar / Study Plan</h2>
+      <p class="sub">Plan your study sessions and stay consistent</p>
+    </div>
+    <div class="month-nav">
+      <button type="button" class="nav-btn" (click)="prevMonth()">‹</button>
+      <div class="month-title">{{ monthLabel }}</div>
+      <button type="button" class="nav-btn" (click)="nextMonth()">›</button>
+    </div>
+  </div>
+
+  <div *ngIf="error" class="banner error">{{ error }}</div>
+  <div *ngIf="loading" class="banner">Loading…</div>
+
+  <div class="sp-body">
+    <div class="calendar-card">
+      <div class="dow">
+        <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+      </div>
+
+      <div class="grid">
+        <button
+          type="button"
+          class="cell"
+          *ngFor="let c of grid"
+          [class.out]="!c.inMonth"
+          [class.today]="c.isToday"
+          [class.selected]="c.isSelected"
+          (click)="select(c)">
+
+          <div class="num">{{ c.date.getDate() }}</div>
+          <div class="dots" *ngIf="c.count > 0">
+            <span class="dot"></span>
+            <span class="count">{{ c.count }}</span>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <div class="side-card">
+      <div class="side-header">
+        <div>
+          <h3>{{ selectedLabel }}</h3>
+          <p class="sub">Sessions for selected day</p>
+        </div>
+      </div>
+
+      <div class="events" *ngIf="eventsForSelectedDay.length > 0; else empty">
+        <div class="event" *ngFor="let ev of eventsForSelectedDay">
+          <div class="event-main">
+            <div class="event-title">
+              <span class="badge">{{ ev.category }}</span>
+              <span [class.done]="ev.isCompleted">{{ ev.title }}</span>
+            </div>
+            <div class="event-time">
+              {{ (ev.startAtUtc | date:'shortTime') }} – {{ (ev.endAtUtc | date:'shortTime') }}
+            </div>
+            <div class="event-notes" *ngIf="ev.notes">{{ ev.notes }}</div>
+          </div>
+
+          <div class="event-actions">
+            <button type="button" class="mini" (click)="startEdit(ev)">Edit</button>
+            <button type="button" class="mini danger" (click)="remove(ev)">Delete</button>
+          </div>
+        </div>
+      </div>
+
+      <ng-template #empty>
+        <div class="empty">No sessions planned for this day.</div>
+      </ng-template>
+
+      <div class="form">
+        <div class="form-title">
+          <h4>{{ formMode === 'create' ? 'Add Study Session' : 'Edit Study Session' }}</h4>
+          <button *ngIf="formMode === 'edit'" type="button" class="mini" (click)="cancelEdit()">Cancel</button>
+        </div>
+
+        <div class="row">
+          <label>Title</label>
+          <input [(ngModel)]="title" placeholder="e.g., DSA - Linked List practice" />
+        </div>
+
+        <div class="row two">
+          <div>
+            <label>Category</label>
+            <select [(ngModel)]="category">
+              <option>Study</option>
+              <option>Revision</option>
+              <option>Assignment</option>
+              <option>Assessment</option>
+              <option>Break</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="checkbox" *ngIf="formMode === 'edit'">
+            <label>
+              <input type="checkbox" [(ngModel)]="isCompleted" />
+              Completed
+            </label>
+          </div>
+        </div>
+
+        <div class="row two">
+          <div>
+            <label>Start</label>
+            <input type="time" [(ngModel)]="startTime" />
+          </div>
+          <div>
+            <label>End</label>
+            <input type="time" [(ngModel)]="endTime" />
+          </div>
+        </div>
+
+        <div class="row">
+          <label>Notes (optional)</label>
+          <textarea [(ngModel)]="notes" rows="3" placeholder="What will you study? any targets? "></textarea>
+        </div>
+
+        <button type="button" class="primary" (click)="save()" [disabled]="loading">
+          {{ formMode === 'create' ? 'Add to Plan' : 'Save Changes' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
